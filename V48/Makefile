@@ -11,11 +11,14 @@ endif
 all: build/main.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS="$(call translate,$(pwd):)" python plot.py
+build/plot1_messwerte.pdf: auswertung.py messung1.txt messung2.txt matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python auswertung.py
 
-# hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf
+build/plot2_messwerte.pdf: build/plot1_messwerte.pdf | build
+
+
+#hier weitere Abhängigkeiten für build/main.pdf deklarieren:
+build/main.pdf: build/plot1_messwerte.pdf build/plot2_messwerte.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
