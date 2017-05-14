@@ -18,7 +18,9 @@ build/plot2_messwerte.pdf: build/plot1_messwerte.pdf | build
 
 
 #hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot1_messwerte.pdf build/plot2_messwerte.pdf
+build/main.pdf: build/plot1_messwerte.pdf build/plot2_messwerte.pdf content/auswertung.tex
+	content/diskussion.tex content/durchfuehrung.tex content/fehlerrechung.tex
+	content/theorie.tex messwerte.tex nahrung.tex
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
