@@ -149,7 +149,7 @@ plt.plot(1/(T1[:30]),gerade(1/(T1[:30]),*params_fit1),'c-',label=r'Fit')
 #plt.plot(1/(T2[:20]),np.log((I2[:20])),'bx',label=r'log Graph')
 
 plt.legend(loc='best')
-plt.xlabel(r' $\frac{1}{T}  1\si{\kelvin}$')
+plt.xlabel(r' $1/T  \ \si{\per\kelvin}$')
 plt.ylabel(r'$\log(I)$')
 plt.savefig('build/plot3_messung1.pdf')
 
@@ -170,7 +170,7 @@ plt.plot(1/(T2[:30]),np.log((I2_richtig[:30])),'gx',label=r'Näherung')
 plt.plot(1/(T2[:30]),gerade(1/(T2[:30]),*params_fit2),'c-',label=r'Fit')
 #plt.plot(1/(T2[:20]),np.log((I2[:20])),'bx',label=r'log Graph')
 plt.legend(loc='best')
-plt.xlabel(r' $1/T  1 / \si{\kelvin}$')
+plt.xlabel(r' $1/T  \ \si{\per\kelvin}$')
 plt.ylabel(r'$\log(I)$')
 plt.savefig('build/plot3_messung2.pdf')
 
@@ -277,7 +277,7 @@ plt.plot(1/T1[:55],np.log(A_1[:55]/(I1_richtig[:55])),'rx',label=r'benutze Messw
 plt.plot(1/T1[:55],gerade(1/T1[:55],*params_reg1),'c-',label=r'Fit')
 #plt.plot(T2,I2_richtig,'mx',label=r'Messpunkte ohne Untergrund')
 plt.legend(loc='best')
-plt.xlabel(r'$\frac{1}{T}  \ \  \si{\per\kelvin}$')
+plt.xlabel(r'$1/T \  \si{\per\kelvin}$')
 plt.ylabel(r'$ B(\frac{1}{T}) $')
 plt.savefig('build/plot5_1.pdf')
 
@@ -313,7 +313,7 @@ plt.plot(1/T2[:55],np.log(A_2[:55]/(I2_richtig[:55])),'rx',label=r'Benutze Messw
 plt.plot(1/T2[:len(A_2)-1],gerade(1/T2[:len(A_2)-1],*params_reg2),'c-',label=r'Fit')
 #plt.plot(T2,I2_richtig,'mx',label=r'Messpunkte ohne Untergrund')
 plt.legend(loc='best')
-plt.xlabel(r'$\frac{1}{T} \ \ \si{\per\kelvin}$')
+plt.xlabel(r'$1/T  \ \si{\per\kelvin}$')
 plt.ylabel(r'$B(\frac{1}{T})$')
 plt.savefig('build/plot5_2.pdf')
 

@@ -5,8 +5,7 @@
 \label{sec:Untergrund}
 
 Um die Aktivierungsenergie $W$ von der Probe zu bestimmen,
-müssen zu nächst die gemessenen
-Messwerte, die in der Tabelle \ref{tab:messwerte} aufgelistet sind,
+müssen zunächst die Messwerte, die in der Tabelle \ref{tab:messwerte} aufgelistet sind,
 für die unterschiedlichen Heizraten in der Form
 Temperatur gegen Depolarisationsstrom aufgetragen werden, zu sehen
 in der Abbildung \ref{fig:mess}.
@@ -18,13 +17,13 @@ in der Abbildung \ref{fig:mess}.
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=1.0\textwidth]{build/plot1_messwerte}
-    \caption{1. Messung mit der Heizrate $1,2 \si{\kelvin\per\minute}$}
+    \caption{1. Messung mit der Heizrate $1,2 \ \si{\kelvin\per\minute}$}
     \label{fig:mess1}
   \end{subfigure}
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=1.0\textwidth]{build/plot2_messwerte}
-    \caption{2. Messung mit der Heizrate $2,0 \si{\kelvin\per\minute}$.}
+    \caption{2. Messung mit der Heizrate $2,0 \ \si{\kelvin\per\minute}$.}
     \label{fig:mess2}
   \end{subfigure}
 \caption{Messwerte der beiden Messungen mit unterschiedlichen Heizraten.}
@@ -32,10 +31,10 @@ in der Abbildung \ref{fig:mess}.
 \end{figure}
 
 
-In der Abbildung \ref{fig:mess} wurden bestimmte
+In der Abbildung \ref{fig:mess} sind bestimmte
 Messpunkte mit der Farbe Blau
 markiert, diese dienen zum Herausrechen des Untergrundes
-bei den Messungen indem eine lineare Regression auf diese Messwerten
+bei den Messungen, indem eine lineare Regression auf diesen Messwerten
 durchgeführt wird.
 \begin{align*}
 m_1&= (7,3\pm0,2)\cdot10^{-13}      &b_1 =(-1.77\pm0,06)\cdot10^{-10} \\
@@ -50,7 +49,7 @@ wird nun von den Messungen
 abgezogen, jedoch nur solange der berechnete Wert
 des Untergrundes positiv ist.
 \begin{equation}
- I_{\mathrm{ohne}}=I_{\mathrm{mess}}-I_\mathrm{Untergrund}\label{eqn:Untergrund}
+ I_{\mathrm{ohne}}=I_{\mathrm{mess}}-I_\mathrm{Untergrund}.\label{eqn:Untergrund}
 \end{equation}
 In der Abbildung \ref{fig:korr} sind die Ausgleichsgerade des Untergrundes
 sowie die Messwerte ohne Untergrund aufgetragen.
@@ -60,13 +59,13 @@ sowie die Messwerte ohne Untergrund aufgetragen.
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=1.0\textwidth]{build/plot1_korrektur}
-    \caption{1. Messung mit der Heizrate $1,2 \si{\kelvin\per\minute}$}
+    \caption{1. Messung mit der Heizrate $1,2 \ \si{\kelvin\per\minute}$}
     \label{fig:korr1}
   \end{subfigure}
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=1.0\textwidth]{build/plot2_korrektur}
-    \caption{2. Messung mit der Heizrate $2,0 \si{\kelvin\per\minute}$.}
+    \caption{2. Messung mit der Heizrate $2,0 \ \si{\kelvin\per\minute}$.}
     \label{fig:korr2}
   \end{subfigure}
 \caption{Messwerte sowie die Messwerte ohne Untergrund  und der berechnete Untergrund der beiden Messungen mit unterschiedlichen Heizraten.}
@@ -81,15 +80,15 @@ sowie die Messwerte ohne Untergrund aufgetragen.
 Nun kann die Aktivierungsenergie $W$ berechnet werden.
 Bei der ersten Methode wird davon ausgegangen, dass am Anfangsteil
 der Depolarisationskurve das Integral in der Gleichung \eqref{eqn:8}
-ungefähr gleich Null ist folglich gilt dort die Näherung
+ungefähr gleich Null ist, folglich gilt dort die Näherung:
 \begin{equation}
-j(T)=\frac{p^2EN_\mathrm{p}}{3kT_\mathrm{p}\tau_{0}}\exp\left(\frac{-W}{kt}\right) \label{eqn:9}
+j(T)=\frac{p^2EN_\mathrm{p}}{3kT_\mathrm{p}\tau_{0}}\exp\left(\frac{-W}{kt}\right). \label{eqn:9}
 \end{equation}
-Die Messwerte, für die diese Näherung gilt ,sind
+Die Messwerte, für die diese Näherung gilt, sind
 in den Abbildung \ref{fig:fit} Grün markiert
 und werden in der Form
 $\ln I$ gegen $\frac{1}{T}$ in dem Diagramm
-\ref{fig:logfit} aufgetragen und in sind ebenfalls in der Tabelle \ref{tab:nahrung} zu finden.
+\ref{fig:logfit} aufgetragen und sind ebenfalls in der Tabelle \ref{tab:nahrung} zu finden.
 
 % tabellle
 \input{nahrung.tex}
@@ -100,13 +99,13 @@ $\ln I$ gegen $\frac{1}{T}$ in dem Diagramm
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=1.0\textwidth]{build/plot1_fit}
-    \caption{1. Messung mit der Heizrate $1,2 \si{\kelvin\per\minute}$}
+    \caption{1. Messung mit der Heizrate $1,2 \ \si{\kelvin\per\minute}$}
     \label{fig:fit1}
   \end{subfigure}
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=1.0\textwidth]{build/plot2_fit}
-    \caption{2. Messung mit der Heizrate $2,0 \si{\kelvin\per\minute}$.}
+    \caption{2. Messung mit der Heizrate $2,0 \ \si{\kelvin\per\minute}$.}
     \label{fig:fit2}
   \end{subfigure}
 \caption{Messwerte ohne Untergrund mit markierten Werten für welche
@@ -123,53 +122,54 @@ die Näherung \ref{eqn:9} gilt.}
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=1.0\textwidth]{build/plot3_messung1}
-    \caption{1. Messung mit der Heizrate $1,2 \si{\kelvin\per\minute}$}
+    \caption{1. Messung mit der Heizrate $1,2 \ \si{\kelvin\per\minute}$}
     \label{fig:logfit1}
   \end{subfigure}
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=1.0\textwidth]{build/plot3_messung2}
-    \caption{2. Messung mit der Heizrate $2,0 \si{\kelvin\per\minute}$.}
+    \caption{2. Messung mit der Heizrate $2,0 \ \si{\kelvin\per\minute}$.}
     \label{fig:logfit2}
   \end{subfigure}
 \caption{Messwerte für welche
-die Näherung \ref{eqn:9} gilt und lineare Regression durch eben diese.}
+die Näherung \ref{eqn:9} gilt und eine lineare Regression durch eben diese.}
 \label{fig:logfit}
 \end{figure}
-
+\FloatBarrier
 
 Durch eine lineare Regression
 mit den Werten, die in der Abbildung \ref{fig:logfit} dargestellt sind, können
-so aus der umgestellten Formel \ref{eqn:9}  $m$ und $b$ aus \eqref{eqn:mb} berechnet werden.
+$m$ und $b$ aus \eqref{eqn:mb} berechnet werden. Dabei kommt die Gleichung \eqref{eqn:mb}
+durch Umformen der Formel \ref{eqn:9} zustande.
 \begin{align}
-  \underbrace{\ln(I(1/T))}_{y(x)}\approx \underbrace{-\frac{W}{k}}_{m}\cdot \underbrace{\frac1T}_{x}+\underbrace{\ln \left( \frac{p^2E}{3kT_p} \frac{N_p}{\tau_0}\right)}_{b} \label{eqn:mb}
+  \underbrace{\ln(I(1/T))}_{y(x)}\approx \underbrace{-\frac{W}{k}}_{m}\cdot \underbrace{\frac1T}_{x}+\underbrace{\ln \left( \frac{p^2E}{3kT_p} \frac{N_p}{\tau_0}\right)}_{b}. \label{eqn:mb}
 \end{align}
 Die Aktivierungsenergie $W$ kann somit über
 \begin{align}
   W=-k\cdot m \label{eqn:Wcool}
 \end{align}
 berechnet werden.
-Aus den linearen Regressionen folgt:
+Aus den linearen Regressionen folgen:
 \begin{align*}
-  m_1=-(5,29\pm0,19)\cdot10^{3}    &  &b_1=-(0,0\pm1,9)\cdot10^{2}\\
-  m_2=-(4,52\pm0,31)\cdot10^{3}    &  &b_2=-(0,1\pm3,1)\cdot10^{2}
+  m_1=-(5,29\pm0,19)\cdot10^{3}\ \si{\kelvin}    &  &b_1=-(0,0\pm1,9)\cdot10^{2}\\
+  m_2=-(4,52\pm0,31)\cdot10^{3}\ \si{\kelvin}    &  &b_2=-(0,1\pm3,1)\cdot10^{2}.
 \end{align*}
-Somit ergibt sich aus der Formel \eqref{eqn:Wcool} die Aktivierungsenergien:
+Somit ergeben sich nach Formel \eqref{eqn:Wcool} die Aktivierungsenergien:
 \begin{align*}
-  W_1=(0,45\pm0,02)\si{\electronvolt}\\
-  W_2=(0,39\pm0,03)\si{\electronvolt}
+  W_1&=(0,45\pm0,02)\ \si{\electronvolt}\\
+  W_2&=(0,39\pm0,03)\ \si{\electronvolt}.
 \end{align*}
 
 \subsubsection{Integral-Methode}
 \label{sec:integral}
 Die Aktivierungsenergie kann ebenfalls durch den Zusammenhang \eqref{eqn:int}
-berechnet werden.
 
 \begin{align}
   \frac{W}{kT}+\ln{(const)}=\ln \frac{\int_T^{T^*}{I(T')dT'}}{I(T)} \label{eqn:int}
 \end{align}
+berechnet werden.
 
-Wieder wird $1/T$ nun aber gegen
+Nun wird $\frac{1}{T}$ gegen
 \begin{align}
   \ln \int_T^{T^*}I(T')dT'\frac{1}{I(T)}=B(\frac{1}{T}) \label{eqn:intcool}
 \end{align}
@@ -179,12 +179,12 @@ die in der Tabelle \ref{tab:integral} aufgelistet sind,
 durchgeführt,
 zu sehen in der Abbildung \ref{fig:intreg}.
 Die lineare Regression vernachlässigt die Wertpaare,
-die zum Berechnen der Untergrundes genutzt wurden,
+die zum Berechnen der Untergrundes genutzt werden,
 da diese zu starke Schwankungen aufweisen.
 Dabei ist $T^*$ ein feste Temperatur mit $I(T^*)\approx 0$.
 Das Integral in der Formel \ref{eqn:intcool} von $T$ bis $T^*$
 wird mit der Funktion trapz aus der Python Bibliothek scipy.integrate
-berechnete.
+berechnet.
 
 \input{integral.tex}
 
@@ -195,28 +195,28 @@ berechnete.
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=1.0\textwidth]{build/plot5_1}
-    \caption{1. Messung mit der Heizrate $1,2 \si{\kelvin\per\minute}$}
+    \caption{1. Messung mit der Heizrate $1,2 \ \si{\kelvin\per\minute}$}
     \label{fig:intreg1}
   \end{subfigure}
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=1.0\textwidth]{build/plot5_2}
-    \caption{2. Messung mit der Heizrate $2,0 \si{\kelvin\per\minute}$.}
+    \caption{2. Messung mit der Heizrate $2,0 \ \si{\kelvin\per\minute}$.}
     \label{fig:intreg2}
   \end{subfigure}
 \caption{Lineare Regression um $W$ aus dem gesamten Kurvenverlauf zu bestimmen.}
 \label{fig:intreg}
 \end{figure}
-
+\FloatBarrier
 Aus den linearen Regressionen folgt diesmal:
 \begin{align*}
   m_1=(7,44\pm0,19)\cdot10^{3}    &  &b_1=-(0,3\pm1,9)\cdot10^{2}\\
-  m_2=(7,18\pm0.27)\cdot10^{3}    &  &b_2=-(0.3\pm3,1)\cdot10^{2}
+  m_2=(7,18\pm0.27)\cdot10^{3}    &  &b_2=-(0.3\pm3,1)\cdot10^{2}.
 \end{align*}
-Somit ergibt sich aus der Formel \eqref{eqn:int} die Aktivierungsenergien:
+Somit ergeben sich aus der Formel \eqref{eqn:int} die Aktivierungsenergien:
 \begin{align*}
-  W_1=(0,64\pm0,02)\si{\electronvolt}\\
-  W_2=(0,62\pm0,02)\si{\electronvolt}
+  W_1=(0,64\pm0,02)\ \si{\electronvolt}\\
+  W_2=(0,62\pm0,02)\ \si{\electronvolt}.
 \end{align*}
 
 
@@ -226,24 +226,24 @@ Durch Differentiation der Gleichung \eqref{eqn:8}
 ergibt sich der Zusammenhang \eqref{eqn:diff}
 zwischen $T_\mathrm{max}$ und der charakteristischen Relaxationszeit $\tau_0$.
 \begin{align}
-  \tau_0=\frac{k T_\mathrm{max}^2}{b W} \exp\left(-\frac{W}{k T_\mathrm{max}} \right)  \label{eqn:diff}
+  \tau_0=\frac{k T_\mathrm{max}^2}{b W} \exp\left(-\frac{W}{k T_\mathrm{max}} \right).  \label{eqn:diff}
 \end{align}
-Somit ergibt sich für die erste Messung mit der Heizrate
+Somit ergibt sich für die erste Messung, mit der Heizrate
 \begin{align*}
-b&=1,2 \si{\kelvin\per\minute}
+b&=1,2 \ \si{\kelvin\per\minute}
 \intertext{sowie der aus den Messwerten bestimmten Größe}
-T_\mathrm{max}&=(260\pm1)\si{\kelvin}
+T_\mathrm{max}&=(260\pm1)\ \si{\kelvin}
 \intertext{und den zwei unterschiedlich berechneten
-Aktivierungsenergien}
-\tau_0^\mathrm{Näherung \ 1}&=(9\pm7)\cdot10^{-7}\si{\second},\\
-\tau_0^\mathrm{Integral \ 1}&=(1.7\pm1.3)\cdot10^{-10}\si{\second}.
+Aktivierungsenergien,}
+\tau_{0_1}^\mathrm{Näherung}&=(9\pm7)\cdot10^{-7}\ \si{\second}\\
+\tau_{0_1}^\mathrm{Integral}&=(1.7\pm1.3)\cdot10^{-10}\ \si{\second}.
 \end{align*}
-Für die zweite Messung mit
+Für die zweite Messung, mit
 \begin{align*}
-b&=2 \si{\kelvin\per\minute}
+b&=2 \ \si{\kelvin\per\minute}
 \intertext{und}
-T_\mathrm{max}&=(263\pm1)\si{\kelvin}
+T_\mathrm{max}&=(263\pm1) \ \si{\kelvin},
 \intertext{folgt }
-\tau_0^\mathrm{Näherung \ 2}&=(1.6\pm2,0)\cdot10^{-5}\si{\second},\\
-\tau_0^\mathrm{Integral \ 2}&=(4\pm4)\cdot10^{-10}\si{\second}.
+\tau_{0_2}^\mathrm{Näherung}&=(1.6\pm2.0)\cdot10^{-5}\ \si{\second}\\
+\tau_{0_2}^\mathrm{Integral}&=(4\pm4)\cdot10^{-10}\ \si{\second}.
 \end{align*}
