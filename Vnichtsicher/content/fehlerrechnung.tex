@@ -1,0 +1,42 @@
+\newpage
+\section{Fehlerrechnung}
+Die Mittelwerte bestimmen sich in der Auswertung nach:
+\begin{align}
+  \bar{x}=\frac{1}{n} \sum_{i=1}^n x_i\,.
+\end{align}
+Für die Standardabweichung ergibt sich:
+\begin{align}
+ s_i=\sqrt{\frac{1}{n-1}\sum_{j=1}^n (v_j-\bar{v_i})^2}
+\end{align}
+mit $v_j$ mit $j=1,..,n$ als Wert mit zufällig behafteten Fehlern.\\
+Diese werden mit Hilfe von
+Numpy 1.9.2, einer Erweiterung von Python 3.2.0, berechnet.
+Die Fehlerfortpflanzung wird mit der Gauß´schen Fehlerfortpflanzung berechnet
+ \eqref{eqn:gaus}.
+\begin{equation}
+\Delta f=\sqrt{\sum_{j=1}^n \left(\frac{\partial f}{\partial x_j}\Delta x_j \right)^{2} }\label{eqn:gaus}.
+\end{equation}
+Diese wird von der Erweiterung Uncertainties 2.4.6.1 von Python 3.2.0 übernommen.
+Desweitern wird in der Auswertung Lineare Regression benutzt.
+um die Konstanten A und B aus einen Gleichung der Form
+\begin{align}
+  y(x)=&A+B\cdot x\label{eqn:lin}
+\intertext{zu berechnen. B errechnet sich hierbei aus der Formel}
+B&=\frac{\overline{xy}-\overline{x}\cdot \overline{y}}{\overline{x^2}-\overline{x}^2}.
+\intertext{und A durch die Geleichung }\\
+A&=\overline{y}-B\cdot \overline{x}\,.\\
+\intertext{Die Ungenauigkeit von A und B ergibt sich aus der
+mittleren Streuung:}\\
+s_{\mathrm{y}}&=\sqrt{\frac{1}{N-2}\cdot \sum_{i=1}^{N}\left(y_i-A-B\cdot x_i\right)^2}\,.\\
+\intertext{Für die Ungenauigkeit von B gilt:}\\
+s_{\mathrm{B}}&=s_{\mathrm{y}} \cdot \sqrt{\frac{1}{N \cdot \left(\overline{x^2}-\left(\overline{x}\right)^2\right)}}\,.\\
+\intertext{Für die Ungenauigkeit von A gilt:}\\
+s_{\mathrm{A}}&=s_{\mathrm{B}} \cdot\sqrt{\overline{x^2}}\,.
+\end{align}
+Für die Lineare Regression wird die Erweiterung Scipy 0.15.1 für Python 3.2.0
+benutzt.
+Abweichungen von den Theoriewerten werden mit der Formel
+\begin{align}
+  a=\frac{|a_\mathrm{gemessen}-a_\mathrm{theorie}|}{a_\mathrm{theorie}} \label{eqn:abweich}
+\end{align}
+berechnet.
