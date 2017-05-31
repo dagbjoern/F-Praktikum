@@ -48,7 +48,7 @@ print(((np.pi/2-params[2])/params[1])/(2*np.pi)*360)
 
 
 
-x=np.linspace(0,2*np.pi,1000)
+x=np.linspace(-1,4,1000)
 
 plt.figure(1)
 plt.plot(winkel,kontrast(I_max,I_min),'kx',label=r'Messwerte')
@@ -57,3 +57,5 @@ plt.legend(loc='best')
 # plt.xlabel(r'Temperatur $T/ \si{\kelvin}$')
 # plt.ylabel(r'Strom $I/ \si{\ampere} $')
 plt.savefig('build/plot1.pdf')
+
+##############################################
