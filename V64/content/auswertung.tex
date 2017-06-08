@@ -1,2 +1,73 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Kontrast}
+\label{sec:Kontrast}
+Zunächt muss der optimale Kontrast des Interfermometers bestimmt
+werden.
+Der Kontrast berechnete sich aus
+\begin{algin}
+K=\frac{I_\mathrm{max}-I_\mathrm{min}}{I_\mathrm{max}+I_\mathrm{min}}\label{eqn:kontrast}
+\end{algin}
+In der Tabelle \ref{tab:kontrast}
+sind die entsprechenden Messwerte aufgelistet, der angegebene Winkel
+entspricht dabei der Ausrichting des ersten Polarisationsfilters.
+\begin{table}
+\centering
+\caption{Messwerte zur Berechnung des Kontrastes nach Formel \eqref{eqn:kontrast}.}
+\begin{tabular}{c c c c c}
+\toprule
+   Winkel $\Phi/\si{\degree}$&   Winkel $\Phi/\si{\radian}$ &  Kontrast $K$ &   $I_\mathrm{max}/\si{\Volt}$ &    $I_\mathrm{min}/\si{Volt}$ \\
+\midrule
+    -15 &   -0,262 &      0,403 &   0,634 &    0,27  \\
+      0 &    0     &      0,1   &   0,622 &    0,509 \\
+     15 &    0,262 &      0,288 &   0,871 &    0,481 \\
+     30 &    0,524 &      0,626 &   1,064 &    0,245 \\
+     45 &    0,785 &      0,826 &   1,026 &    0,098 \\
+     60 &    1,047 &      0,8   &   0,882 &    0,098 \\
+     75 &    1,309 &      0,505 &   0,474 &    0,156 \\
+     90 &    1,571 &      0,123 &   0,292 &    0,228 \\
+    105 &    1,833 &      0,366 &   0,263 &    0,122 \\
+    120 &    2,094 &      0,703 &   0,293 &    0,051 \\
+    135 &    2,356 &      0,831 &   0,412 &    0,038 \\
+    150 &    2,618 &      0,742 &   0,566 &    0,084 \\
+    165 &    2,88  &      0,436 &   0,674 &    0,265 \\
+    180 &    3,142 &      0,047 &   0,601 &    0,547 \\
+    195 &    3,403 &      0,369 &   0,906 &    0,418 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Um nun den besten Winkel zu finden, bei dem der Kontrast maximal ist, wird
+nun der Winkel gegen den Kontrast aufgetragen, zu sehen in der Abbildung \ref{fig:kontrast},
+An den Messwerten wird nun die Funktion
+\begin{algin}
+  K\left(\Phi\right) =a\cdot \left|\sin\left(b\codt\Phi+c \right)\right|+d
+\end{algin}
+gefittet.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{build/plot1.pdf}
+    \caption{Verlauf des Kontrastest abhängig von dem Winkel des Polarisationsfilters.}
+    \label{fig:kontrast}
+\end{figure}
+
+Es ergeben sich die folgenden Parameter:
+\begin{align*}
+  a&=0,83\pm0,03
+  &b&=2,02\pm0,01\\
+  c&=-0,12\pm0,03
+  &d&=0\pm0,02
+\end{align*}
+Der beste Winkel ergibt sich aus einem belibigen
+Hochpunkt der Funktion $K(\Phi)$ hierbei
+\begin{align*}
+ \Phi_\mathrm{max}\approx0,84\si{\radian}\approx48\si{\degree}.
+\end{align*}
+Bei den folgenden Messungen wird der erste Polarisationsfilter
+nun immer auf den Winkel $\Phi=48\si{\degree}$ gestellt.
+\subsection{Brechungsindex von Glas}
+
+
+
+\subsection{Brechungsindex von Luft}

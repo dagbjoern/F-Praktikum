@@ -23,16 +23,18 @@ def kontrast(I_max,I_min):
 
 
 #kontrastwert:
-winkel , I_max , I_min = np.genfromtxt('Messwertewinkel.txt',unpack=True)
+grad , I_max , I_min = np.genfromtxt('Messwertewinkel.txt',unpack=True)
 #
 # I_min=np.min(I)
 # I_max=np.max(I)
 
-winkel=winkel/360*2*np.pi
+winkel=grad/360*2*np.pi
 
 #print('kontrast k',kontrast(I_max,I_min))
 
 
+
+print(tabulate({"Grad": grad,"Winkel": np.round(winkel, 3)," I_min":I_min,"I_max":I_max,"kontrast": np.round(kontrast(I_max,I_min),3) },headers="keys",tablefmt="latex"))
 
 
 params , cov = curve_fit(test ,winkel,kontrast(I_max,I_min),p0=[0.9,2*np.pi/3,0,0])
@@ -42,6 +44,7 @@ params , cov = curve_fit(test ,winkel,kontrast(I_max,I_min),p0=[0.9,2*np.pi/3,0,
 print('params',params)
 print('fehler',np.sqrt(np.diag(cov)))
 
+print((np.pi/2-params[2])/params[1])
 
 print(((np.pi/2-params[2])/params[1])/(2*np.pi)*360)
 
