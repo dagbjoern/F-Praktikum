@@ -21,7 +21,9 @@ def kontrast(I_max,I_min):
         k=(I_max-I_min)/(I_min+I_max)
         return k
 
-
+def brechgas(M,lam,L):
+    n=M*lam/L+1
+    return n
 #kontrastwert:
 grad , I_max , I_min = np.genfromtxt('Messwertewinkel.txt',unpack=True)
 #
@@ -62,3 +64,4 @@ plt.legend(loc='best')
 plt.savefig('build/plot1.pdf')
 
 ##############################################
+print(brechgas(messgas,632.990*10**(-9),0.1))
