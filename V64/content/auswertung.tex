@@ -5,18 +5,19 @@
 Zunächt muss der optimale Kontrast des Interfermometers bestimmt
 werden.
 Der Kontrast berechnete sich aus
-\begin{algin}
+\begin{align}
 K=\frac{I_\mathrm{max}-I_\mathrm{min}}{I_\mathrm{max}+I_\mathrm{min}}\label{eqn:kontrast}
-\end{algin}
+\end{align}
 In der Tabelle \ref{tab:kontrast}
 sind die entsprechenden Messwerte aufgelistet, der angegebene Winkel
 entspricht dabei der Ausrichting des ersten Polarisationsfilters.
 \begin{table}
 \centering
 \caption{Messwerte zur Berechnung des Kontrastes nach Formel \eqref{eqn:kontrast}.}
+\label{tab:kontrast}
 \begin{tabular}{c c c c c}
 \toprule
-   Winkel $\Phi/\si{\degree}$&   Winkel $\Phi/\si{\radian}$ &  Kontrast $K$ &   $I_\mathrm{max}/\si{\Volt}$ &    $I_\mathrm{min}/\si{Volt}$ \\
+   Winkel $\Phi/\si{\degree}$&   Winkel $\Phi/\si{\radian}$ &  Kontrast $K$ &   $I_\mathrm{max}/\si{\volt}$ &    $I_\mathrm{min}/\si{\volt}$ \\
 \midrule
     -15 &   -0,262 &      0,403 &   0,634 &    0,27  \\
       0 &    0     &      0,1   &   0,622 &    0,509 \\
@@ -40,9 +41,9 @@ entspricht dabei der Ausrichting des ersten Polarisationsfilters.
 Um nun den besten Winkel zu finden, bei dem der Kontrast maximal ist, wird
 nun der Winkel gegen den Kontrast aufgetragen, zu sehen in der Abbildung \ref{fig:kontrast},
 An den Messwerten wird nun die Funktion
-\begin{algin}
-  K\left(\Phi\right) =a\cdot \left|\sin\left(b\codt\Phi+c \right)\right|+d
-\end{algin}
+\begin{align}
+  K\left(\Phi\right) %= a \cdot | \sin\left(b\codt\Phi+c \right)| + d
+\end{align}
 gefittet.
 
 \begin{figure}
@@ -71,3 +72,24 @@ nun immer auf den Winkel $\Phi=48\si{\degree}$ gestellt.
 
 
 \subsection{Brechungsindex von Luft}
+Die Messwerte für den den Brechungsindex von Luft sind in der Tabelle \ref{tab:luft}
+zu finden sowie die aus der Formel \eqref{eqn:} berechneten Brechungsindexes
+\begin{table}
+\centering
+\caption{Messwerte zur Berechnung des Brechungsindexes $n$ und $n$ nach Formel \eqref{eqn:}.}
+\label{tab:luft}
+\begin{tabular}{c c }
+\toprule}
+  Anzahl der Fringes $M$ & Brechungsindex $n$ \\
+\midrule
+41 &  1,000260\\
+42 &  1,000266\\
+42 &  1,000266\\
+\bottomrule
+\end{tabular}
+\end{table}
+Durch Mittelung der berechneten Brechungsindexe aus der Tabelle \ref{tab:luft}
+folgt:
+\begin{align*}
+  n_\mathrm{Luft}=1,000264\pm 3\dot10^{-6}
+\end{align*}

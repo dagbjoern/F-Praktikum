@@ -1,9 +1,17 @@
 \section{Aufbau und Durchführung}
 \label{sec:Durchführung}
+
+\subsection{Justage}
+Zu Beginn ist eine Justierung des Interferometers notwendig.
+Ziel ist eine Aufspaltung eines Strahls in Zwei Strahlen, die beide in
+der horizonthalen Ebene liegen und anschließendes Überlappen der Strahlen
+beim Verlassen des Interferometers. Dies wird durch Einstellen der
+Spiegel innerhalb und außerhalb des Interferometers erreicht.
+
 Die  Apperatur ist aufgebaut wie in Abbildung \ref{fig:apparat}.
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{Apparatur.PNG}
+    \includegraphics[width=0.7\textwidth]{Apperatur.PNG}
     \caption{Aufbau des Sagnac-Interferometers.\cite{skript}}
     \label{fig:apparat}
 \end{figure}
@@ -22,21 +30,13 @@ Bei der ersten Messung werden zwei Glasplättchen, die auf einer Rotationsachse
 befestigt sind, unterschiedlicher
 Ausrichtung in die beiden Strahlengänge positioniert, zu sehen in der Abbildung
 \ref{fig:glasplattchen}.
-% \begin{figure}
-%     \centering
-%     \includegraphics[width=0.7\textwidth]{Apparatur.PNG}
-%     \caption{Aufbau des Sagnac-Interferometers.\cite{skript}}
-%     \label{fig:glasplattchen}
-% \end{figure}\\
 
-\subsection{Justage}
-Zu Beginn ist eine Justierung des Interferometers notwendig.
-Ziel ist eine Aufspaltung eines Strahls in Zwei Strahlen, die beide in
-der horizonthalen Ebene liegen und anschließendes Überlappen der Strahlen
-beim Verlassen des Interferometers. Dies wird durch Einstellen der
-Spiegel innerhalb und außerhalb des Interferometers erreicht.
-
-
+\begin{figure}
+     \centering
+     \includegraphics[width=0.7\textwidth]{Glasblattchen.PNG}
+     \caption{Rotationsachse mit Glasblättchen.\cite{skript}}
+     \label{fig:glasplattchen}
+\end{figure}
 Zur Messung des Kontrasts wird ein linearer Polarisationsfilter mit $45\si{\degree}$
 Ausrichtung verwendet, der hinter dem PBSC positioniert wird.
 Dadurch entsteht ein Interferenzbild, dessen Intensität durch eine Photodiode gemessen wird.
@@ -49,6 +49,13 @@ Winkel des ersten Polarisationsfilters so gewählt, dass ein Kontrast Maximum vo
 des weiteren wird der zweite Polatriationsfilter und die Photodiode entfern.
 Statdessen trifft der gebündelte Strahl nun einen Polarisationsseperator realisiert durch einen
 weiteren PBSC und einen Spiegel, wie in Abbildung \ref{fig:polsep} zu sehen.
+\begin{figure}
+     \centering
+     \includegraphics[width=0.7\textwidth]{PSBC.PNG}
+     \caption{Aufbau des Polarisationsseperator.\cite{skript}}
+     \label{fig:polsep}
+\end{figure}
+
 Mittels zweier Photodioden wird der zuvor aufgespaltene Strahl detektiert.
 Mit einem Oszilloskop wird die Spannungsdifferenz zwischen den Intensitäten
 gemessen. Ein weiteres Gerät zähl die Nulldurchgänge der Spannungsdifferenz.
