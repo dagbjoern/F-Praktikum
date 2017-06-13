@@ -95,4 +95,4 @@ print(brechglas2(M_6,phi[2],632.990*10**(-9),0.001))
 #print(brechglas1(M_8,phi[3],632.990*10**(-9),0.001))
 print(brechglas2(M_8,phi[3],632.990*10**(-9),0.001))
 
-#print(tabulate({"Grad": grad,"Winkel": np.round(winkel, 3)," I_min":I_min,"I_max":I_max,"kontrast": np.round(kontrast(I_max,I_min),3) },headers="keys",tablefmt="latex"))
+print(tabulate({"M_2": M_2 ,"n_2": np.round(brechglas2(M_2,phi[0],632.990*10**(-9),0.001), 2),"M_4":M_4,"n_4":np.round(brechglas2(M_4,phi[1],632.990*10**(-9),0.001), 2),"M_6":M_6,"n_6":np.round(brechglas2(M_6,phi[2],632.990*10**(-9),0.001), 2),"M_8":M_8,"n_8":np.round(brechglas2(M_8,phi[3],632.990*10**(-9),0.001), 2) },headers="keys",tablefmt="latex"))
