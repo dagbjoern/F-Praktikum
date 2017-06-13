@@ -45,9 +45,22 @@ der Brechungsindex des Gases. Dies erzeugt eine Phasenverschiebung:
   \Delta\phi=\frac{2\pi}{\lambda_\mathrm{vac}}(n-1)L
 \end{align}
 Durch diese Phasenverschiebung entstehen Interferenzerscheinungen.
-Die Interferenzmaxima $M$ sind in folgender Beziehung abhängig
+Die dabei zählbaren Extrema $M$ sind in folgender Beziehung abhängig
 vom Brechungsindex $n$:
 \begin{align}
-  M=\frac{n-1}{\lambda_\mathrm{vac}}L
+  M=\frac{n-1}{\lambda_\mathrm{vac}}L\label{eqn:gas}
 \end{align}
 \subsection{Brechungsindex von Festkörpern}
+Zur Bestimmung des Brechungsindex wird ein dünne transparente
+Platte des Festkorpers mit der Breite $T$ genutzt. Diese wird senkrecht in einen der Strahlengänge
+plaziert und der Winkel $\theta$ zwischen der senkrechten und der Platte kontinuierlich vergrößert. Somit wird die Strecke,
+die der Strahl in dem Festkorper zurück legt, ebenfalls kontinuierlich größer.
+Es entseht wieder eine Interfernzerscheinung
+und es lässt sich ein Beziehung zwischen den zählbare Extrema $M$
+und dem Brechungsindex $n$ herleiten.
+\begin{align}%1/(1-M*lam/(T*theta**2))
+  n&=\frac{\alpha^2+2(1-\cos\theta)(1-\alpha)}{2(1-\cos\theta-\alpha)}
+  \text{mit} \alpha&= \frac{M\lambda_\mathrm{vac}}{2T}
+  % \intertext{}
+  % n&\approx \frac{1}{1-\frac{M\lamda_\mathrm{vac}}{T*\theta^2}
+\end{align}

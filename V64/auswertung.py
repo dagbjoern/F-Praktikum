@@ -25,15 +25,18 @@ def brechgas(M,lam,L):
     n=M*lam/L+1
     return n
 
-def brechglas(M,theta,lam,T):
-    a=M*lam/(2*T)
-    print('a',a)
-    print('theta',np.cos(theta))
-    return (a**2+2*(1-np.cos(theta))*(1-a))/(2*(1-np.cos(theta)-a))
+def brechglas1(M,theta,lam,T):
+    return 1/(1-M*lam/(T*theta**2))
+
+def brechglas2(M,theta,lam,T):
+        a=M*lam/(2*T)
+        return (a**2+2*(1-np.cos(theta))*(1-a))/(2*(1-np.cos(theta)-a))
 
 #kontrastwert:
 grad , I_max , I_min = np.genfromtxt('Messwertewinkel.txt',unpack=True)
 M_2 , M_4 , M_6 , M_8 =np.genfromtxt('messungglas.txt',unpack=True)
+
+
 phi=np.array([2,4,6,8])
 phi=phi+10
 print(phi)
@@ -83,11 +86,13 @@ print(np.mean(brechgas(messgas,632.990*10**(-9),0.1)),np.std(brechgas(messgas,63
 
 #def brechglas(M,theta,lam,T):
 print('glas')
-print(brechglas(M_2,phi[0],632.990*10**(-9),0.0001))
-print(M_2,phi[0])
-print(brechglas(M_4,phi[1],632.990*10**(-9),0.0001))
-print((M_4,phi[1]))
-print(brechglas(M_6,phi[2],632.990*10**(-9),0.0001))
-print(M_6,phi[2])
-print(brechglas(M_8,phi[3],632.990*10**(-9),0.0001))
-print(M_8,phi[3])
+#print(brechglas1(M_2,phi[0],632.990*10**(-9),0.001))
+print(brechglas2(M_2,phi[0],632.990*10**(-9),0.001))
+#print(brechglas1(M_4,phi[1],632.990*10**(-9),0.001))
+print(brechglas2(M_4,phi[1],632.990*10**(-9),0.001))
+#print(brechglas1(M_6,phi[2],632.990*10**(-9),0.001))
+print(brechglas2(M_6,phi[2],632.990*10**(-9),0.001))
+#print(brechglas1(M_8,phi[3],632.990*10**(-9),0.001))
+print(brechglas2(M_8,phi[3],632.990*10**(-9),0.001))
+
+#print(tabulate({"Grad": grad,"Winkel": np.round(winkel, 3)," I_min":I_min,"I_max":I_max,"kontrast": np.round(kontrast(I_max,I_min),3) },headers="keys",tablefmt="latex"))
