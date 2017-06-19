@@ -19,12 +19,12 @@ entspricht dabei der Ausrichting des ersten Polarisationsfilters.
 \toprule
    Winkel $\Phi/\si{\degree}$&   Winkel $\Phi/\si{\radian}$ &  Kontrast $K$ &   $I_\mathrm{max}/\si{\volt}$ &    $I_\mathrm{min}/\si{\volt}$ \\
 \midrule
-    -15 &   -0,262 &      0,403 &   0,634 &    0,27  \\
-      0 &    0     &      0,1   &   0,622 &    0,509 \\
+    -15 &   -0,262 &      0,403 &   0,634 &    0,270 \\
+      0 &    0     &      0,100 &   0,622 &    0,509 \\
      15 &    0,262 &      0,288 &   0,871 &    0,481 \\
      30 &    0,524 &      0,626 &   1,064 &    0,245 \\
      45 &    0,785 &      0,826 &   1,026 &    0,098 \\
-     60 &    1,047 &      0,8   &   0,882 &    0,098 \\
+     60 &    1,047 &      0,800 &   0,882 &    0,098 \\
      75 &    1,309 &      0,505 &   0,474 &    0,156 \\
      90 &    1,571 &      0,123 &   0,292 &    0,228 \\
     105 &    1,833 &      0,366 &   0,263 &    0,122 \\
@@ -42,7 +42,7 @@ Um nun den besten Winkel zu finden, bei dem der Kontrast maximal ist, wird
 nun der Winkel gegen den Kontrast aufgetragen, zu sehen in der Abbildung \ref{fig:kontrast},
 An den Messwerten wird nun die Funktion
 \begin{align}
-  K\left(\Phi\right) %= a \cdot | \sin\left(b\codt\Phi+c \right)| + d
+  K\left(\Phi\right) = a \cdot \left| \sin\left(b\cdot\Phi+c \right)\right| + d
 \end{align}
 gefittet.
 
@@ -75,12 +75,12 @@ und der aus Formel \eqref{eqn:glas} resultierenden Brechungsindex $n$ aufgetrage
 für die unterschiedlichen Winkel $\theta$.
 
 \begin{table}
+  \caption{Zählrate der Extrema $M$ und die daraus nach Formel \eqref{eqn:glas} berechneten Brechungsindices $n$ für unterschiedliche Winkel $thexta$}
+  \label{tab:glas}
   \begin{tabular}{c c | c c | c c | c c}
-\caption{Zählrate der Extrema $M$ und die daraus nach Formel \eqref{eqn:glas} berechneten Brechungsindices $n$ für unterschiedliche Winkel $theta$}
-\label{tab:glas}
     \toprule
 \multicolumn{2}{c}{$\Theta=2\,\si{\degree}$}  &  \multicolumn{2}{c}{$\Theta=4\,\si{\degree}$} & \multicolumn{2}{c}{$\Theta=6\,\si{\degree}$} & \multicolumn{2}{c}{$\Theta=8\,\si{\degree}$}\\
-      $M_2$ &  $n_2$ &  $M_4$ & $n_4$ & $M_6$ &  n\_6 & M_8 \\
+      $M_2$ &  $n_2$ &  $M_4$ & $n_4$ & $M_6$ &  $n_6$ & $M_8$ & $n_8$ \\
   \midrule
        8 &  1,13 &  16 &  1,20 & 21 & 1,20 & 29 & 1,22\\
        8 &  1,13 &  17 &  1,22 & 23 & 1,22 & 30 & 1,23\\
@@ -91,22 +91,28 @@ für die unterschiedlichen Winkel $\theta$.
   \end{tabular}
 \end{table}
 
+Werden die berechneten Brechungsindices aus der Tabelle \ref{tab:glas} gemittelt folgt für den
+bestimmten Brechungsindex für Glas
+\begin{align*}
+  n=1,18\pm0,04.
+\end{align*}
+
 
 \subsection{Brechungsindex von Luft}
 Die Messwerte für den den Brechungsindex von Luft sind in der Tabelle \ref{tab:luft}
 zu finden sowie die berechneten Brechungsindexes $n$ nach Formel \eqref{eqn:luft}.
 Die Formel \eqref{eqn:luft} ergibt sich aus der Formel \eqref{eqn:gas}.
 \begin{align}%    n=M*lam/L+1
-    n=\frac{M\lambda_\mathrm{vac}{L+1}
+    n=\frac{M\lambda_\mathrm{vac}}{L+1}
 \end{align}
 
 \begin{table}
 \centering
 \caption{Messwerte zur Berechnung des Brechungsindexes $n$ und $n$ nach Formel \eqref{eqn:luft}.}
 \label{tab:luft}
-\begin{tabular}{c c }
-\toprule}
-  Anzahl der Fringes $M$ & Brechungsindex $n$ \\
+\begin{tabular}{c c}
+\toprule
+  Anzahl der Fringe $M$ & Brechungsindex $n$ \\
 \midrule
 41 &  1,000260\\
 42 &  1,000266\\
