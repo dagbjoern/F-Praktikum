@@ -80,13 +80,16 @@ plt.figure(1)
 plt.plot(winkel,kontrast(I_max,I_min),'kx',label=r'Messwerte')
 plt.plot(x,test(x,*params))
 plt.legend(loc='best')
-#plt.xlabel(r'Winkel $\Phi/ \si{\radian}$')
-#plt.ylabel(r'Kontrast $K$')
+plt.xlabel(r'Winkel $\Phi/ rad$')
+plt.ylabel(r'Kontrast $K$')
 plt.savefig('build/plot1.pdf')
 
 ##############################################
 print(brechgas(messgas,632.990*10**(-9),0.1))
 print(np.mean(brechgas(messgas,632.990*10**(-9),0.1)),np.std(brechgas(messgas,632.990*10**(-9),0.1)))
+
+print('Abweichung',(np.mean(brechgas(messgas,632.990*10**(-9),0.1))-1.000292)/1.000292)
+
 
 #def brechglas(M,theta,lam,T):
 print('glas')
@@ -104,3 +107,5 @@ print(tabulate({"M_2": M_2 ,"n_2": np.round(brechglas2(M_2,phi[0],632.990*10**(-
 
 print(np.mean([brechglas2(M_2,phi[0],632.990*10**(-9),0.001),brechglas2(M_4,phi[1],632.990*10**(-9),0.001),brechglas2(M_6,phi[2],632.990*10**(-9),0.001),brechglas2(M_8,phi[3],632.990*10**(-9),0.001)]))
 print(np.std([brechglas2(M_2,phi[0],632.990*10**(-9),0.001),brechglas2(M_4,phi[1],632.990*10**(-9),0.001),brechglas2(M_6,phi[2],632.990*10**(-9),0.001),brechglas2(M_8,phi[3],632.990*10**(-9),0.001)]))
+
+print('Abweichung glas',(np.mean([brechglas2(M_2,phi[0],632.990*10**(-9),0.001),brechglas2(M_4,phi[1],632.990*10**(-9),0.001),brechglas2(M_6,phi[2],632.990*10**(-9),0.001),brechglas2(M_8,phi[3],632.990*10**(-9),0.001)])-1.45 )/1.45 )
