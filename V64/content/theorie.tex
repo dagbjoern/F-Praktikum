@@ -3,7 +3,7 @@
 Dieses Experiment befasst sich mit der Bestimmung der Brechungsindices
 von Gasen und Festkörpern mittels Sagnac-Interferometer.
 
-\subsection{Interferenz}
+%\subsection{Interferenz}
 \subsection{Das Sagnac-Interferometer}
 Das Sagnac-Interferometer ist aufgebaut wie in Abbildung \ref{fig:apparat}.
 \begin{figure}
@@ -12,6 +12,7 @@ Das Sagnac-Interferometer ist aufgebaut wie in Abbildung \ref{fig:apparat}.
     \caption{Aufbau des Sagnac-Interferometers.\cite{skript}}
     \label{fig:apparat}
 \end{figure}
+\FloatBarrier
 Die Anordnung setzt sich zu Beginn zusammen aus der Quelle, einem HeNe-Laser, und zwei
 Spiegel zur Ausrichtung des Laserstrahls zum Polarizing-Beam-Splitter-Cube hin.
 Zuvor passiert der Laserstrahl einen linearen Polarisationsfilter.
@@ -24,7 +25,8 @@ erfährt eine Richtungsänderung um $90\si{\degree}$. Dies ist in der Abbildung
    \includegraphics[width=0.7\textwidth]{Pbsc.PNG}
    \caption{Aufaspaltung des Strahls im PBSC.\cite{skript}}
    \label{fig:pbsc}
-\end{figure}\\
+\end{figure}
+
 Drei weitere Spiegel lenken beide Strahle so um, dass diese die gleiche Strecke zurücklegen und wieder auf
 den PBSC treffen. Dort werden die Strahlen erneut, nach ihrer polarisation,
 umgelenkt und durchgelassen und laufen somit wieder zusammen.
@@ -33,8 +35,8 @@ werden und somit zwei unterschiedliche Materialien durchqueren.
 %Bei der ersten Messung werden zwei Glasplättchen, die auf einer Rotationsachse
 %befestigt sind, unterschiedlicher
 %Ausrichtung in die beiden Strahlengänge positioniert, zu sehen in der Abbildung
-\ref{fig:glasplattchen}.
-
+%\ref{fig:glasplattchen}.
+\FloatBarrier
 
 \subsection{Brechungsindices von Gasen}
 Für die Bestimmung von Brechungsindices von Gasen wird eine Gaszelle
@@ -55,13 +57,13 @@ vom Brechungsindex $n$:
 Zur Bestimmung des Brechungsindex wird ein dünne transparente
 Platte des Festkörpers mit der Breite $T$ genutzt. Diese wird senkrecht in einen der Strahlengänge
 platziert und der Winkel $\theta$ zwischen der Senkrechten und der Platte kontinuierlich vergrößert. Somit wird die
-Strecke, die der Strahl in dem Festkörper zurück legt, ebenfalls kontinuierlich größer.
+Strecke, die der Strahl in dem Festkörper zurücklegt, ebenfalls kontinuierlich größer.
 Es entsteht wieder eine Interferenzerscheinung.
 Es lässt sich eine Beziehung zwischen den zählbaren Extrema $M$
 und dem Brechungsindex $n$ herleiten:
 \begin{align}%1/(1-M*lam/(T*theta**2))
   n&=\frac{\alpha^2+2(1-\cos\theta)(1-\alpha)}{2(1-\cos\theta-\alpha)}\\
-  \text{mit} \ \ \alpha&= \frac{M\lambda_\mathrm{vac}}{2T}.
+  \text{mit} \ \ \alpha&= \frac{M\lambda_\mathrm{vac}}{2T}. \label{eqn:glas}
   % \intertext{}
   % n&\approx \frac{1}{1-\frac{M\lamda_\mathrm{vac}}{T*\theta^2}
 \end{align}
