@@ -10,7 +10,7 @@ gilt
 B_{Erde_z}=B_{vertikal}.
 \end{align*}
 Das Magnetfeld der Vertikalfeld-Spule lässt sich über die Gleichung
-\eqref{eqn:helm},die Magnetischeflussdichte für eine Helmholzspule mit dem Radius $R$,
+\eqref{eqn:helm},die Magnetischeflussdichte für eine Helmholz-Spule mit dem Radius $R$,
 Anzahl der Windungen $N$, der Magnetischen Feldkonstante $\mu_0$ und dem durchfließenden Strom $I$
 \begin{align}
 % B=const.mu_0*(8*I*N/(np.sqrt(125)*R))
@@ -36,8 +36,9 @@ für  unterschiedliche Frequenzen der RF-Spule
 die eingestellten Ströme $I$ für die "Sweep"- und Horizontal-Spule
 und die daraus
 berechneten gesamt B-Feldstärken,
-bei denen es zu Resonanzen kommt, aufgelistet.
-Die gesamt B-Feldstärke resultiert dabei aus
+bei denen es zu Resonanzen für die beiden Isotope $\ce{^{87}Rb}$ und $\ce{^{85}Rb}$
+ kommt, aufgelistet.
+Die gesamt  B-Feldstärke resultiert dabei aus
 der Summe der B-Feldstärken der
 einzelnen Spulen, die sich mit Hilfe der Formel \eqref{eqn:helm}
 berechnen lassen.
@@ -47,7 +48,7 @@ und einer Windungszahl $N=11$, bei der Horizontale-Spule ist $R=15,79\,\si{\cent
 
 \begin{table}
 \centering
-\caption{Messwerte für die Position der zwei Peaks bei unterschiedlichen Frequenzen.}
+\caption{Messwerte für die Position der zwei Peaks für die beiden Isotope bei unterschiedlichen Frequenzen.}
 \label{tab:messwerte}
 \begin{tabular}{c| c c c | c c c }
 \toprule
@@ -78,8 +79,8 @@ zusehen in der Abbildung \ref{fig:mess}, aufgetragen.
   \caption{Messwerte der Stärke der Magnetfeldes für die Position der Peaks bei unterschiedlichen Frequenzen}
   \label{fig:mess}
 \end{figure}
-
-Für die Messwerte der zwei Peaks werden zwei linerare Ausgleichsrechnungen
+\Floatbarrier
+Für die Messwerte der zwei Peaks werden zwei lineare Ausgleichsrechnungen
 durchgeführt und es ergeben sich die folgenden Werte für die Steigungen und die y-Achsenabschnitte
 \begin{align*}
   m_1&= \SI{1,42(3)e-10}{\tesla\per\hertz}&    &b_1=\SI{2,12(15)e-5}{\tesla}\\
@@ -94,8 +95,8 @@ und
 \begin{align*}
 b=B_\mathrm{Erde-hori}.
 \end{align*}
-Somit folgt für die horizontale Komponente der Erdmagnetfeldes durch Mittelung der
-beiden berechnenten y-Achsenabschnitte
+Somit folgt für die horizontale Komponente der Erdmagnetfeldes durch Mittlung der
+beiden berechneten y-Achsenabschnitte
 \begin{align*}
 B_\mathrm{Erde-hori}=\SI{20,2(16)}{\micro\tesla}.
 \end{align*}
@@ -116,7 +117,7 @@ nach $I$ zu
   I=J\left( \frac{g_J}{g_F}-1\right) \label{eqn:I}
 \end{align}
 und einsetzten von der Landé-Faktor $g_J\approx2,0023$ der Kernspin für die
-unterschiedlichen Isotope brechnet werden.
+unterschiedlichen Isotope berechnet werden.
 Es folgt aus \eqref{eqn:I}
 \begin{align*}
   I_1&=1,50\pm0,04&   &I_2=2,52\pm0,06.
@@ -124,26 +125,27 @@ Es folgt aus \eqref{eqn:I}
 Aus einer Nuklidkarte \cite{verhalt} kann entnommen werden, dass für
 $\ce{^{87}Rb}$ $I=\frac{3}{2}$
 und  für $\ce{^{85}Rb}$ $I=\frac{5}{2}$ gilt.
-Folgich kann dem 1. Isotop $\ce{^{87}Rb}$ und dem  2. Isotop $\ce{^{85}Rb}$
+Folglich kann dem 1. Isotop $\ce{^{87}Rb}$ und dem  2. Isotop $\ce{^{85}Rb}$
 zugewiesen werden.
 \subsection{Isotopenverhältnis}
-Aus einem Sigwnalbild für $\nu=100\,\si{\kilo\hertz}$
+Aus einem Signalbild für $\nu=100\,\si{\kilo\hertz}$
 zu sehen in der Abbildung \ref{fig:signal},
 kann das Isotopenverhältnis bestimmt werden.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.7\textwidth]{TEK0002.png}
-  \caption{Signal}
+  \caption{Signalbild für $\nu=100\,\si{\kilo\hertz}$ mit makierten Amplituden der Resonanzen der zwei Isotope.}
   \label{fig:signal}
 \end{figure}
 Dabei entspricht das Amplitudenverhältnis dem Isotopenverhältnis.
 \begin{align}
   \frac{A_{\ce{^{87}Rb}} }{A_{\ce{^{85}Rb}} }=\frac{N_{\ce{^{87}Rb}} }{N_{\ce{^{85}Rb}} }  \label{eqn:verhalt}
 \end{align}
-Die Amplituden der Resonazen sind:
+Die Amplituden \footnote{Die Amplituden wurden mit Hilfe von dem Lineraltool von Paint vermessen.}
+der Resonazen sind:
 \begin{align*}
-A_{\ce{^{87}Rb}}&=17&   & A_{\ce{^{85}Rb}}=26   \text{\,\,\, \footnote{Die Amplituden wurden mit Hilfe von dem Lineratool von Paint vermessen.}}.
+  A_{\ce{^{87}Rb}}&=17&   & A_{\ce{^{85}Rb}}=26 .
 \end{align*}
 aus \eqref{eqn:verhalt} folgt für das Isotopenverhältnis
 \begin{align*}
