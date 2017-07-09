@@ -2,21 +2,21 @@
 \label{sec:Auswertung}
 \subsection{Vertikalkomponente des Erdmagnetfeldes}
 Zu Beginn der Messung wird mit Hilfe einer Vertikalfeld-Spule
-die lokale vertikal Komponente des Erdmagnetfeldes kompensiert, damit
- die der zusehende Peak
-wie in der Justage beschrieben möglichst schmal wird. Folglich
+die lokale vertikal Komponente des Erdmagnetfeldes kompensiert, sodass
+der zusehende Peak
+möglichst schmal wird. Folglich
 gilt
 \begin{align*}
-B_{Erde_z}=B_{vertikal}.
+B_{Erde-z}=B_{vertikal}.
 \end{align*}
 Das Magnetfeld der Vertikalfeld-Spule lässt sich über die Gleichung
-\eqref{eqn:helm},die Magnetischeflussdichte für eine Helmholz-Spule mit dem Radius $R$,
+\eqref{eqn:helm}, die Magnetischeflussdichte für eine Helmholz-Spule mit dem Radius $R$,
 Anzahl der Windungen $N$, der Magnetischen Feldkonstante $\mu_0$ und dem durchfließenden Strom $I$
 \begin{align}
 % B=const.mu_0*(8*I*N/(np.sqrt(125)*R))
 B=\mu_0 \cdot \frac{8 I N}{\sqrt{125} R}, \label{eqn:helm}
 \end{align}
-berechen. Bei der Vertikalen-Spule besitzt einen Radius von $R=11,735\,\si{\centi\meter} $
+berechen. Die Vertikalen-Spule besitzt einen Radius von $R=11,735\,\si{\centi\meter} $
 und eine Windungszahl von $N=11$.
 Bei einem Strom von
 \begin{align*}
@@ -25,11 +25,11 @@ Bei einem Strom von
 wird die Peakbreite minimal. Somit folgt aus \eqref{eqn:helm}
 eine  vertikal Komponente von
 \begin{align*}
-  B_{vertikal}=33.7\,\si{\micro\tesla}.
+  B_{Erde-z}=B_{vertikal}=33.7\,\si{\micro\tesla}.
 \end{align*}
 
 
-
+\newpage
 \subsection{Landesche $g_F$ -Faktoren und horizontal Komponente der Erdmagnetfeldes}
 In der Tabelle \ref{tab:messwerte} sind jeweils
 für  unterschiedliche Frequenzen der RF-Spule
@@ -45,14 +45,14 @@ berechnen lassen.
 Die "Sweep"-Spule besitzt einen Radius  $R=16.39\si{\centi\meter}$
 und einer Windungszahl $N=11$, bei der Horizontale-Spule ist $R=15,79\,\si{\centi\meter}$
  und $N=154$ .
-
+\FloatBarrier
 \begin{table}
 \centering
 \caption{Messwerte für die Position der zwei Peaks für die beiden Isotope bei unterschiedlichen Frequenzen.}
 \label{tab:messwerte}
 \begin{tabular}{c| c c c | c c c }
 \toprule
-Frequenz & \multicolumn{3}{c}{Erster Peak} & \multicolumn{3}{c}{Zweiter Peak} \\
+Frequenz & \multicolumn{3}{c}{1. Isotop} & \multicolumn{3}{c}{2. Isotop} \\
 $\nu \, \si{\mega\hertz}$  & $I_{Sweep} \, \si{\per\ampere}$ &   $I_{hori} \, \si{\per\ampere}$ &  $B_{ges} \, \si{\per\micro\tesla}$ & $I_{Sweep} \, \si{\per\ampere}$
 &   $I_{hori} \, \si{\per\ampere} $ & $ B_{ges} \si{\per\micro\tesla}$\\
 \midrule
@@ -79,8 +79,8 @@ zusehen in der Abbildung \ref{fig:mess}, aufgetragen.
   \caption{Messwerte der Stärke der Magnetfeldes für die Position der Peaks bei unterschiedlichen Frequenzen}
   \label{fig:mess}
 \end{figure}
-\Floatbarrier
-Für die Messwerte der zwei Peaks werden zwei lineare Ausgleichsrechnungen
+\FloatBarrier
+Für die Messwerte der zwei Isotope werden zwei lineare Ausgleichsrechnungen
 durchgeführt und es ergeben sich die folgenden Werte für die Steigungen und die y-Achsenabschnitte
 \begin{align*}
   m_1&= \SI{1,42(3)e-10}{\tesla\per\hertz}&    &b_1=\SI{2,12(15)e-5}{\tesla}\\
@@ -116,7 +116,7 @@ nach $I$ zu
 \begin{align}
   I=J\left( \frac{g_J}{g_F}-1\right) \label{eqn:I}
 \end{align}
-und einsetzten von der Landé-Faktor $g_J\approx2,0023$ der Kernspin für die
+und einsetzten von der Landé-Faktor $g_J\approx2,0023$  und $J=\frac{1}{2}$, der Kernspin für die
 unterschiedlichen Isotope berechnet werden.
 Es folgt aus \eqref{eqn:I}
 \begin{align*}
@@ -154,14 +154,23 @@ aus \eqref{eqn:verhalt} folgt für das Isotopenverhältnis
 
 
 
-\subsection{Quadratischer Zeemaneffekt}
-Indem das größte gemessene Magnetfelde bei der Höchste Frequenz in den Zusatzterm der
-durch den Quadratischen Zeemaneffekt entsteht aus der Formel \eqref{eqn:quadrat} einsetzt,
-kann der quadratische Zeemaneffekt bei der Messung  abgeschätzt werden.
+\subsection{Quadratischer Zeeman-Effekt}
+Indem die größten gemessene Magnetfelde, bei der höchste Frequenz, für die beiden Isotope in den Korrekturterm
+\begin{align}
+  U_{HF_{korr}}=g_F^2\mu_B^2B^2\frac{1-2M_F}{\Delta E_Hy}\label{eqn:korr},
+\end{align}
+der durch Berücksichtigung des Quadratischen Zeeman-Effekt entsteht,
+einsetzt werden,
+kann der quadratische Zeeman-Effekt bei der Messung abgeschätzt werden.
 Für $\ce{^{87}Rb}$ beträgt die Hyperfeinstrukturaufspaltung
 \begin{align*}
-  \Delta E=\SI{4,53e-24}{\joule}
+  \Delta E_{Hy}=\SI{4,53e-24}{\joule}
 \intertext{und für $\ce{^{85}Rb}$}
-  \Delta E=\SI{2,01e-24}{\joule}.
+  \Delta E_{Hy}=\SI{2,01e-24}{\joule}.
 \end{align*}
-...
+Durch Einsetzten der Werte in die Gleichung \eqref{eqn:korr} folgt für
+\begin{align*}
+&\text{$\ce{^{87}Rb}$:}&  &\Delta E_Hy=\SI{-1.30(5)e-31}{\joule}
+\intertext{und für}
+&\text{$\ce{^{85}Rb}$:}&  &\Delta E_Hy=\SI{-2.61(11)e-31}{\joule}
+\end{align*}

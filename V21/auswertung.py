@@ -114,8 +114,8 @@ print('I_2',I_spin(g_F_2,J))
 
 x=np.linspace(-1,np.amax(Frequenz)+100000)
 plt.figure(1)
-plt.plot(Frequenz/1000000,B_1_ges*10**(6),'rx',label=r'Messwerte $Pik_1$')
-plt.plot(Frequenz/1000000,B_2_ges*10**(6),'bx',label=r'Messwerte $Pik_2$')
+plt.plot(Frequenz/1000000,B_1_ges*10**(6),'rx',label=r'Messwerte $1. Isotop$')
+plt.plot(Frequenz/1000000,B_2_ges*10**(6),'bx',label=r'Messwerte $2. Isotop$')
 plt.plot(x/1000000,gerade(x,*params_1)*10**(6),'-r',alpha=0.25,label=r'Fit 1')
 plt.plot(x/1000000,gerade(x,*params_2)*10**(6),'-b',alpha=0.25,label=r'Fit 2')
 plt.legend(loc='best')
@@ -129,10 +129,10 @@ print('energie',1e6*const.h)
 
 #quadratischer Zeemaneffekt
 def zee(g_f,B,M_F,dE) :
-    print('mu^2',(const.mu_0*const.mu_0))
+    mu_b=const.value("Bohr magneton")
     print('g_f',(g_f*g_f))
     print('B^2',B*B)
-    return (g_f*g_f)*(const.mu_0*const.mu_0)*(B*B)*((1-2*M_F)/dE)
+    return (g_f*g_f)*(mu_b**2)*(B*B)*((1-2*M_F)/dE)
 
 
 dE_87=4.54*10**(-24)
@@ -144,7 +144,7 @@ print(np.amax(B_1_ges))
 print(np.amax(B_2_ges))
 print('zee^2 E_87=',zee(g_87,np.amax(B_1_ges),1,dE_87) )
 print('zee^2 E_85=',zee(g_85,np.amax(B_2_ges),1,dE_85) )
-
+print(np.amax(B_2_ges))
 
 print('erde vertikal',abweichung(45.2e-6,B_vertikal))
 print(19.3+0.891)

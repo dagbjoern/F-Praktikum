@@ -1,4 +1,4 @@
-Niveaus\section{Theorie}
+\section{Theorie}
 \label{sec:Theorie}
 \subsection{Energienivau-Struktur}
 Aus der Quantenmechanik ist bekannt, dass der Gesamtdrehimpuls $J$ an ein magnetisches Moment $\vec{\mu_\mathrm{J}}$
@@ -34,11 +34,11 @@ Beim Anlegen eines Magnetfeldes spalten sich die HyperfeinstrukturNiveaus zusät
 welche von $-F$ bis $F$ läuft.
 Für die Energiedifferenz der Zeeman-Niveaus gilt dann:
 \begin{align}
-  U_\mathrm{HF}g_\mathrm{F}\mu_\mathrm{F}B.
+  U_\mathrm{HF}=g_\mathrm{F}\mu_\mathrm{F}B.
 \end{align}
 Mit $g_\mathrm{F}$ als Landé-Faktor:
 \begin{align}
-  g_\mathrm{F}=g_\mathrm{J}\frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}.
+  g_\mathrm{F}=g_\mathrm{J}\frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}.\label{eqn:JI}
 \end{align}
 
 \subsection{Optisches Pumpen}
@@ -48,7 +48,7 @@ Es folgt eine Erläuterung anhand eines hypothetischen Alkali-Atoms.
     \centering
     \includegraphics[width=0.5\textwidth]{Uebergang.PNG}
     \caption{Zeeman-Aufspaltung des hyphotetischen Alkali-Atoms und die möglichen Übergänge.\cite{skript}}
-    \label{fig:Uebargang}
+    \label{fig:Uebergang}
 \end{figure}
 
 In Abbildung \ref{fig:Uebergang} sind mögliche Übergänge dargestellt, diese lassen sich folgendermaßen nach der Polarisation der Strahlung kategorisieren:
@@ -78,7 +78,7 @@ Eine mit dem zu untersuchenden Material gefüllte Dampfzelle ist nach abgeschlos
 Wird ein variables Hochfrequenzfeld angelegt und ein Magnetfeld durchfahren, so setzt die Inversion der Besetzungszahlen in den S-Niveaus ein. Die Transparenz
 beginnt. Sobald das Magnetfeld den Wert:
 \begin{align}
-  B_\mathrm{m}=\frac{4\pi m_\mathrm{0}}{e_\mathrm{0}g_\mathrm{J}}\nu
+  B_\mathrm{m}=\frac{4\pi m_\mathrm{0}}{e_\mathrm{0}g_\mathrm{J}}\nu \label{eqn:keineahnung}
 \end{align}
 erreicht, startet die induzierte Emission und das obere S-Nivau wird
 entleert. Weil das untere Nivau zum Teil wieder gefüllt ist, kann das
@@ -96,6 +96,6 @@ dargestellt.
 \subsection{Quadratischer Zeeman-Effekt}
 Bei höheren Flussdichten müssen für die Übergangsenergien die höheren Ordnungen von $B$ berücksichtigt werden. Nach Breit-Rabi gilt:
 \begin{align}
-  U_\mathrm{HF}=g_\mathrm{F}\mu_\mathrm{B}B+ g^2_\mathrm{F}\mu^2_\mathrm{B}B^2\frac{(1-2M_\mathrm{F})}{\Delta E_\mathrm{Hy}}-
+  U_\mathrm{HF}=g_\mathrm{F}\mu_\mathrm{B}B+ g^2_\mathrm{F}\mu^2_\mathrm{B}B^2\frac{(1-2M_\mathrm{F})}{\Delta E_\mathrm{Hy}}
 \end{align}
 Die Zeeman-Aufspaltung ist bei höheren Magnetfeldern abhängig von der Hyperfeinstruktur. Dies wird als quadratischer Zeeman-Effekt bezeichnet.
