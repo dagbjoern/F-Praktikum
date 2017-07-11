@@ -55,15 +55,15 @@ gefittet.
 
 Es ergeben sich die folgenden Parameter:
 \begin{align*}
-  a&=0,83\pm0,03
-  &b&=2,02\pm0,01\\
-  c&=-0,12\pm0,03
-  &d&=0\pm0,02.
+  a&=\num{0,83\pm0,03}
+  &b&=\num{2,02\pm0,01}\\
+  c&=\num{-0,12\pm0,03}
+  &d&=\num{0\pm0,02}.
 \end{align*}
 Der beste Winkel ergibt sich aus einem beliebigen
 Hochpunkt der Funktion $K(\Phi)$:
 \begin{align*}
- \Phi_\mathrm{max}\approx0,84\si{\radian}\approx48\si{\degree}.
+ \Phi_\mathrm{max}\approx  \SI{0,84(2)}{\radian} \approx \SI{48,1(9)}{\degree}.
 \end{align*}
 Bei den folgenden Messungen wird der erste Polarisationsfilter
 nun immer auf den Winkel $\Phi=48\si{\degree}$ gestellt.
@@ -71,26 +71,40 @@ nun immer auf den Winkel $\Phi=48\si{\degree}$ gestellt.
 
 \subsection{Brechungsindex von Glas}
 In der Tabelle \ref{tab:glas} ist die gemessene Anzahl der durchlaufenen Extrema $M$
-und der aus Formel \eqref{eqn:glas} resultierenden Brechungsindex $n$ aufgetragen
-für die unterschiedlichen Winkel $\theta$.
+%\eqref{eqn:glas}
+für die unterschiedlichen Winkel $\theta$ und deren Mittelwerte aufgetragen.
 
 \begin{table}
   \centering
-  \caption{Zählrate der Extrema $M$ und die daraus nach Formel \eqref{eqn:glas} berechneten Brechungsindices $n$ für unterschiedliche Winkel $\theta$}
+  \caption{Gemessene Zählrate der Extrema $M$ für unterschiedliche Winkel $\theta$ und die Mittelwerte der Zählraten}
   \label{tab:glas}
-  \begin{tabular}{c c | c c | c c | c c}
+  \begin{tabular}{c c c c}
     \toprule
-\multicolumn{2}{c}{$\Theta=2\,\si{\degree}$}  &  \multicolumn{2}{c}{$\Theta=4\,\si{\degree}$} & \multicolumn{2}{c}{$\Theta=6\,\si{\degree}$} & \multicolumn{2}{c}{$\Theta=8\,\si{\degree}$}\\
-      $M_2$ &  $n_2$ &  $M_4$ & $n_4$ & $M_6$ &  $n_6$ & $M_8$ & $n_8$ \\
+$\Theta=2\,\si{\degree}$  &  $\Theta=4\,\si{\degree}$ & $\Theta=6\,\si{\degree}$ & $\Theta=8\,\si{\degree}$\\
+      $M_2$ &   $M_4$ & $M_6$ &   $M_8$ \\
   \midrule
-       8 &  1,13 &  16 &  1,20 & 21 & 1,20 & 29 & 1,22\\
-       8 &  1,13 &  17 &  1,22 & 23 & 1,22 & 30 & 1,23\\
-       8 &  1,13 &  14 &  1,17 & 20 & 1,19 & 27 & 1,20\\
-       7 &  1,11 &  14 &  1,17 & 22 & 1,21 & 27 & 1,20\\
-       9 &  1,15 &  15 &  1,19 & 20 & 1,19 & 27 & 1,20\\
+       8 &   16 &  21 & 29  \\
+       8 &   17 &  23 & 30  \\
+       8 &   14 &  20 & 27  \\
+       7 &   14 &  22 & 27  \\
+       9 &   15 &  20 &  27 \\
+  \midrule
+  Mittelwerte: & &  & \\
+  8,0\pm0,6 & 15,2\pm1,2  & 21,2\pm1,2  & 28,0\pm1,3 \\
   \bottomrule
   \end{tabular}
 \end{table}
+Die Mittelwerte von $M$  aus Tabelle \ref{tab:glas} werden nun in Abhängigkeit von dem Winkel
+$\theta$ aufgetragen, zusehen in der Abbildung \ref{fig:glas}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{build/plotglas.pdf}
+    \caption{Anzahl der durchlaufenen Extrema $M$ in Abhängigkeit von dem Winkel $\theata$.}
+    \label{fig:glas}
+\end{figure}
+
 
 Werden die berechneten Brechungsindices aus der Tabelle \ref{tab:glas} gemittelt folgt für den
 bestimmten Brechungsindex für Glas
