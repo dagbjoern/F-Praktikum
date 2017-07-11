@@ -1,7 +1,17 @@
 \section{Theorie}
 \label{sec:Theorie}
+\subsection{Bestzung im Atom}
+Die innersten Schalen eines Atoms sind, nach dem Pauli-Prinzip, vollständig mit Elektronen besetzt.
+Die äußeren Schalen hingegen folgen einer temperaturabhängigen Verteilung.
+Im thermischen Gleichgewicht gilt für zwei Zustände mit den Energien $W_\mathrm{1}$ und $W_\mathrm{2}$ nach der Boltzmann-Verteilung:
+\begin{align}
+  \frac{N_2}{N_2}=\frac{g_\mathrm{2}}{g_\mathrm{1}}\frac{\exp(-W_\mathrm{2}/kT)}{\exp(-W_\mathrm{1}/kT)}.
+\end{align}
+Hierin sind $g_1$ und $g_2$ statistische Gewichte, die angeben wie viele Zustände zu den Energien $W_\mathrm{1}$ bzw. $W_\mathrm{2}$.
+
 \subsection{Energienivau-Struktur}
-Aus der Quantenmechanik ist bekannt, dass der Gesamtdrehimpuls $J$ an ein magnetisches Moment $\vec{\mu_\mathrm{J}}$
+Aus der Quantenmechanik ist bekannt, dass der Gesamtdrehimpuls $J=\vec{L}+\vec{S}$,
+mit $\vec{L}$d dem Bahndrehimpuls und $\vec{S}$ der Eigendrehimpuls, an ein magnetisches Moment $\vec{\mu_\mathrm{J}}$
 koppelt:
 \begin{align}
   \vec{\mu_\mathrm{J}}=-g_\mathrm{J}\mu_\mathrm{B}\vec{J}.
@@ -42,7 +52,7 @@ Mit $g_\mathrm{F}$ als Landé-Faktor:
 \end{align}
 
 \subsection{Optisches Pumpen}
-Optisches Pumpen ist die Inversion einer thermischen Besetzung, nach Boltzmann, durch optische Anregung.
+Optisches Pumpen ist die Inversion der Energiezustände eines Atoms, durch optische Anregung.
 Es folgt eine Erläuterung anhand eines hypothetischen Alkali-Atoms.
 \begin{figure}
     \centering
@@ -57,15 +67,18 @@ In Abbildung \ref{fig:Uebergang} sind mögliche Übergänge dargestellt, diese l
   \item{$\sigma^-$-Übergang: Der Spin ist parallel zur Ausbreitungsrichtung der Lichtquanten, dies entspricht linkszirkular-polarisiertem Licht ($\Delta M-\mathrm{J}=-1$)}
   \item{$\pi$-Übergang: Linerar-polarisiertes Licht ($\Delta M_\mathrm{J}=0$)}.
 \end{itemize}
-Angenommen das Alkali-Atom wird mit rechtszirkular-polarisiertem Licht bestrahlt, so werden Elektronen des unteren S-Niveaus angeregt und
-gehen über in ein P-Nivau. Durch die sogenannte spontane Emission findet ein Rückgang sowohl ins Untere als auch ins Obere S-Niavau statt,
-da aber die Anregung nur im Unteren erfolgt, leert sich dieses Nivau.
-Die gewünschte Inversion der thermischen Besetzung tritt ein.\\
+Angenommen das Alkali-Atom wird mit rechtszirkular-polarisiertem Licht bestrahlt, so werden Elektronen des $^2S_\mathrm{\frac{1}{2}}$ Niveaus mit $M_\mathrm{J}=-\frac{1}{2}$
+angeregt und
+gehen über in das $^2P_\mathrm{\frac{1}{2}}$ mit $M_\mathrm{J}=+\frac{1}{2}$. Durch die sogenannte spontane Emission findet ein Rückgang sowohl ins
+ $^2S_\mathrm{\frac{1}{2}}$ Niveaus mit $M_\mathrm{J}=+\frac{1}{2}$ als auch ins $^2S_\mathrm{\frac{1}{2}}$ Niveaus mit $M_\mathrm{J}=-\frac{1}{2}$ statt,
+da aber die Anregung nur im $^2S_\mathrm{\frac{1}{2}}$ Niveau mit $M_\mathrm{J}=-\frac{1}{2}$ erfolgt, leert sich dieses Nivau.
+Die gewünschte Inversion der Energiezustände tritt ein.\\
 Eine weitere Methode die Elektronen in den Grundzustand zu bekommen nennt sich induzierte Emission.
-Bei dieser Methode wird ein Photon mit einer Energie gleich dem Energieabstand zweier Niveaus eingestrahlt. Dadurch kehrt das Elektron zurück in
+Bei dieser Methode wird ein Photon mit einer Energie gleich dem Energieabstand zwischen dem $^2S_\mathrm{\frac{1}{2}}$ Niveau mit $M_\mathrm{J}=+\frac{1}{2}$
+und  $M_\mathrm{J}=-\frac{1}{2}$ eingestrahlt. Dadurch kehrt das Elektron zurück in
 den Grundzustand und es werden zwei Photonen mit gleicher Energie emittiert.\\
 Beide Arten der Emission, bildlich dargestellt in Abbildung \ref{fig:emission}, laufen parallel ab, jedoch dominiert die induzierte Emission gegenüber der spontanen.
-Deren Übergangswahrscheinlichkeit ist um den Faktor $5,5\cdot10^25$ größer. Die induzierte Emission kann dazu genutzt werden die Zeeman-Niveaus auszumessen.
+Deren Übergangswahrscheinlichkeit ist um den Faktor $5,5\cdot10^{25}$ größer. Die induzierte Emission kann dazu genutzt werden die Zeeman-Niveaus auszumessen.
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{emission.PNG}
@@ -78,9 +91,9 @@ Eine mit dem zu untersuchenden Material gefüllte Dampfzelle ist nach abgeschlos
 Wird ein variables Hochfrequenzfeld angelegt und ein Magnetfeld durchfahren, so setzt die Inversion der Besetzungszahlen in den S-Niveaus ein. Die Transparenz
 beginnt. Sobald das Magnetfeld den Wert:
 \begin{align}
-  B_\mathrm{m}=\frac{4\pi m_\mathrm{0}}{e_\mathrm{0}g_\mathrm{J}}\nu \label{eqn:keineahnung}
+  B_\mathrm{m}=\frac{4\pi m_\mathrm{0}}{e_\mathrm{0}g_\mathrm{F}}\nu \label{eqn:keineahnung}
 \end{align}
-erreicht, startet die induzierte Emission und das obere S-Nivau wird
+erreicht, startet die induzierte Emission und das obere S-Niveau wird
 entleert. Weil das untere Nivau zum Teil wieder gefüllt ist, kann das
 eingestrahlte $\sigma^+$-Licht erneut absorbiert werden.
 Im Resonanzfall nimmt die Transparenz ab, dies ist in Abbildung \ref{fig:Transparenz}
