@@ -30,11 +30,8 @@ def brechglas1(M,theta,lam,T):
     cool=(test+theta)**2-(test-theta)**2
     return 1/(1-M*lam/(T*cool))
 
-def brechglas2(M,theta,lam,T):
-    test=10/360 * 2*np.pi
-    theata=np.sqrt((test+theta)**2-(test-theta)**2)
-    a=M*lam/(2*T)
-    return (a**2+2*(1-np.cos(theta))*(1-a))/(2*(1-np.cos(theta)-a))
+def brechglas2(m,lam,T,a):
+    return (2*T*a)/(2*T*a-m)
 
 plt.figure(1)
 plt.plot(1,1)
@@ -118,11 +115,28 @@ print(np.mean(brechgas(messgas,632.990*10**(-9),0.1)),np.std(brechgas(messgas,63
 print('Abweichung',(np.mean(brechgas(messgas,632.990*10**(-9),0.1))-1.000292)/1.000292)
 print(np.size(M[1,:]))
 
+def gerade(x,n):
+    T=0.001
+    lam=632.990*10**(-9)
+    return ((2*T)/lam) *((n-1)/n)*(10/360)*2*np.pi*x
+
+params2 , cov2 = curve_fit(gerade, phi, noms(M_mittel))
+
+parameter=unp.uarray(params2,np.sqrt(np.diag(cov2)))
+
+
+print('n_glas=',parameter)
+print('Abweichung=', (parameter-1.5)/1.5)
+
+x=np.linspace(0,0.15)
+
 plt.figure(2)
-plt.errorbar(phi,noms(M_mittel), xerr=0, yerr=std(M_mittel) ,'kx',label=r'Messwerte')
+plt.errorbar(phi,noms(M_mittel), xerr=0, yerr=stds(M_mittel),fmt='xb' ,label=r'Messwerte')
+plt.plot(x,gerade(x,*params2),alpha=0.5,label=r'Fit-fkt.')
+#plt.plot(x,gerade(x,1.5),alpha=0.5,label=r'Fit-fkt.')
 plt.legend(loc='best')
 plt.xlabel(r'Winkel $\Phi/ rad$')
-plt.ylabel(r'M $K$')
+plt.ylabel(r'M ')
 plt.savefig('build/plotglas.pdf')
 
 
@@ -131,18 +145,19 @@ plt.savefig('build/plotglas.pdf')
 #def brechglas(M,theta,lam,T):
 
 print(brechglas1(M_2,phi[0],632.990*10**(-9),0.001))
-print(brechglas2(M_2,phi[0],632.990*10**(-9),0.001))
+#print(brechglas2(M_2,phi[0],632.990*10**(-9),0.001))
 print(brechglas1(M_4,phi[1],632.990*10**(-9),0.001))
-print(brechglas2(M_4,phi[1],632.990*10**(-9),0.001))
+#print(brechglas2(M_4,phi[1],632.990*10**(-9),0.001))
 print(brechglas1(M_6,phi[2],632.990*10**(-9),0.001))
-print(brechglas2(M_6,phi[2],632.990*10**(-9),0.001))
+#print(brechglas2(M_6,phi[2],632.990*10**(-9),0.001))
 print(brechglas1(M_8,phi[3],632.990*10**(-9),0.001))
-print(brechglas2(M_8,phi[3],632.990*10**(-9),0.001))
+#print(brechglas2(M_8,phi[3],632.990*10**(-9),0.001))
 #
 # print(tabulate({"M_2": M_2 ,"n_2": np.round(brechglas2(M_2,phi[0],632.990*10**(-9),0.001), 2),"M_4":M_4,"n_4":np.round(brechglas2(M_4,phi[1],632.990*10**(-9),0.001), 2),"M_6":M_6,"n_6":np.round(brechglas2(M_6,phi[2],632.990*10**(-9),0.001), 2),"M_8":M_8,"n_8":np.round(brechglas2(M_8,phi[3],632.990*10**(-9),0.001), 2) },headers="keys",tablefmt="latex"))
 #
 #
 # print(np.mean([brechglas2(M_2,phi[0],632.990*10**(-9),0.001),brechglas2(M_4,phi[1],632.990*10**(-9),0.001),brechglas2(M_6,phi[2],632.990*10**(-9),0.001),brechglas2(M_8,phi[3],632.990*10**(-9),0.001)]))
 # print(np.std([brechglas2(M_2,phi[0],632.990*10**(-9),0.001),brechglas2(M_4,phi[1],632.990*10**(-9),0.001),brechglas2(M_6,phi[2],632.990*10**(-9),0.001),brechglas2(M_8,phi[3],632.990*10**(-9),0.001)]))
-
-print('Abweichung glas',(np.mean([brechglas2(M_2,phi[0],632.990*10**(-9),0.001),brechglas2(M_4,phi[1],632.990*10**(-9),0.001),brechglas2(M_6,phi[2],632.990*10**(-9),0.001),brechglas2(M_8,phi[3],632.990*10**(-9),0.001)])-1.45 )/1.45 )
+#def brechglas2(m,lam,T,a):
+a=10/360*2*np.pi
+#print('glas',brechglas2(m,632.990*10**(-9),0.001,a))
