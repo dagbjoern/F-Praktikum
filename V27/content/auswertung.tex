@@ -1,0 +1,89 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+\subsection{Theoretische Werte}
+Zu Beginn können mit Hilfe der Formel \eqref{eqn:lande}
+die theoretischen Werte der Lande-Faktoren
+für die entsprechenden Orbitale ausgerechnet werden.
+Die Berechneten Werte sind in der Tabelle \ref{tab:theo1}
+zu finden.
+
+\begin{table}
+  \centering
+  \caption{Theoretische Werte für die Landé-Faktoren der Orbitale.}
+  \label{tab:theo1}
+  \begin{tabular}{c c c c c c}
+    \toprule
+& Orbital  & S   &  L & J  & $g_j$ \\
+    \midrule
+Rot & $^1P_1$ & 0 & 1 & 1 & 1,0\\
+&$^1D_2$& 0 & 2 & 2 & 1,0\\
+Blau&$^3S_1$& 1 & 0 & 1 & 2,0\\
+&$^3P_1$& 1 & 2 & 1 & 1,5\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Deweiteren könnnen die Lané-Faktoren für Übergänge
+bei dem anormalen Zeeman-Effekt berechnet werden. Dafür werden nur
+Übergänge zwischen Orbitale, die einen Spin $S=!0$, besitzen betrachtet (Blaues Licht).
+Die Berechneten Werte sind in der Tabelle \ref{tab:theo2}
+zu finden.
+
+\begin{table}
+  \centering
+  \caption{Theoretische Werte für die Landé-Faktoren $g_{ji}$ für Übergänge bei
+  dem der annormale Zeeman-Effekt berücksichtigt werden muss.}
+  \label{tab:theo2}
+\begin{tabular}{c c c c c c c}
+  \toprule
+      &            &  \multicolumn{2}{c}{$^3P_1$}  & \multicolumn{2}{c}{$^3P_1$} &    \\
+      & $\Delta m$ &   $m_1$&  $m_1g_1$            & $m_2$    & $m_2g_2$         & $g_{ij}$\\
+  \midrule
+\sigma &  -1   &    1 &  2,0     &  0  & 0,0  &  2,0  \\
+       &       &    0 &  0,0     & -1  & 1,5  &  1,5  \\
+\pi    &   0   &    1 &  2,0     &  1  & 1,5  &  0,5  \\
+       &       &    0 &  0,0     &  0  & 0,0  &  0,0  \\
+       &       &   -1 & -2,0     & -1  & -1,5 & -0,5  \\
+\sigma &  +1   &    0 &  0,0     &  1  & 1,5  & -1,5  \\
+       &       &   -1 & -2,0     &  0  & 0,0  & -2,0  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Hysterese}
+Es wurde eine Hysteresekurve für den verwendeten Elektromagneten aufgenommen.
+Die Tabelle \ref{tab:hyst} enthält die Messwerte von des Magnetfeld $B$
+in Abhängigkeit von dem  Strom $I$. Diese sind wiederum
+in der Abblidung \ref{fig:hyst} aufgetragen.
+\begin{table}
+  \centering
+  \caption{Messwerte für die Hysterese}
+  \label{tab:hyst}
+\begin{tabular}{c c c c}
+  \toprule
+ Strom $I/\si{\ampere}$ & Magnetfeld $B/\si{\milli\tesla}$  & $I/\si{\ampere}$ & $B/\si{\milli\tesla}$ \\
+  \midrule
+%messwerte
+  \bottomrule
+\end{tabular}
+\end{table}
+
+
+% \begin{figure}
+%   \centering
+%   \includegrafics{}
+%   \caption
+%   \label{fig:hyst}
+% \end{figure}
+
+Um Später die Benötigten B-Felder Zu bestimmen wird eine Ausgleichsrechnung
+an den Messwerten bei steigendem Strom durch geführt.
+Als Ansatz wird die Funktion
+\begin{align}
+B(I)=A \cdot \arctan(\frac{I-I_0}/C) \label{eqn:hyst}
+\end{align}
+verwendet.
+Es ergeben sich für die Parameter die folgenden Werte:
+\begin{align}
+  A=\SI{1.39(7)e3}{\milli\tesla}   & I_0=\SI{0.21(13)}{\ampere}  &  C=\SI{21.6(16)}{ampere}
+\end{align}
