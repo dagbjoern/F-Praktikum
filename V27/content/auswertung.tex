@@ -1,14 +1,13 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 \subsection{Vorbereitung}
-Für die Auswertung
+Für die Auswertung des Versuches
 werden bestimmte Größen benötigt dazu gehören
 zu einem das Dispersionsgebiet $\Delta\lambda$
 und das Auflösungsvermögen A der Lummer-Gehrcke-Platte
-für die unt
-erschiedlichen Wellenlängen $\lambda=\SI{643.8}{\nano\meter}$
+für die unterschiedlichen Wellenlängen $\lambda=\SI{643.8}{\nano\meter}$
 und $\lambda=\SI{480.0}{\nano\meter}$.
-Das Dispersionsgebiet lässt sich durch die Formel(ADD) berechen
+Das Dispersionsgebiet lässt sich durch die Formel(ADD) berechnen
 und für das Auflösungsvermögen wird die Formel (ADD) verwendet.
 
 
@@ -19,22 +18,23 @@ Diese sind in der Tabelle  \ref{tab:vorbereitung} aufgelistet.
   \label{tab:vorbereitung}
   \begin{tabular}{c c c}
     \toprule
-       \lambda / \si{\nano\meter}  &  \delta\lambda  & A \\
+       $\lambda / \si{\nano\meter} $ &  $\delta\lambda/ \cdot10^{-11}\si{\meter}$  & $A / 10^{-13}$\\
      \midrule
-    643,8  &  4,89e-11 &  1,96e-13 \\
-    480,0  &  2,70e-11 &  1,08e-13 \\
+    643,8  &  4,89 &  1,96 \\
+    480,0  &  2,70 &  1,08 \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 
 
+\FloatBarrier
 
 \subsection{Theoretische Werte}
 Zu Beginn können mit Hilfe der Formel \eqref{eqn:lande}
 die theoretischen Werte der Lande-Faktoren
 für die entsprechenden Orbitale ausgerechnet werden.
-Die Berechneten Werte sind in der Tabelle \ref{tab:theo1}
+Die berechneten Werte sind in der Tabelle \ref{tab:theo1}
 zu finden.
 
 \begin{table}
@@ -53,16 +53,15 @@ Blau&$^3S_1$& 1 & 0 & 1 & 2,0\\
   \end{tabular}
 \end{table}
 
-Deweiteren könnnen die Lané-Faktoren für Übergänge
-bei dem anormalen Zeeman-Effekt berechnet werden. Dafür werden nur
-Übergänge zwischen Orbitale, die einen Spin $S\neq0$, besitzen betrachtet (Blaues Licht).
+Desweiteren können die Lané-Faktoren für Übergänge
+bei dem anormalen Zeeman-Effekt durch die Formel (ADD) berechnet werden.
 Die Berechneten Werte sind in der Tabelle \ref{tab:theo2}
 zu finden.
 
 \begin{table}
   \centering
   \caption{Theoretische Werte für die Landé-Faktoren $g_{ji}$ für Übergänge bei
-  dem der annormale Zeeman-Effekt berücksichtigt werden muss.}
+  dem der anormale Zeeman-Effekt berücksichtigt wird.}
   \label{tab:theo2}
 \begin{tabular}{c c c c c c c}
   \toprule
@@ -96,14 +95,14 @@ $\sigma$ &  +1   &    0 &  0,0     &  1  & 1,5  & -1,5  \\
 Es wurde eine Hysteresekurve für den verwendeten Elektromagneten aufgenommen.
 Die Tabelle \ref{tab:hyst} enthält die Messwerte von des Magnetfeld $B$
 in Abhängigkeit von dem  Strom $I$. Diese sind wiederum
-in der Abblidung \ref{fig:hyst} aufgetragen.
+in der Abbildung \ref{fig:hyst} aufgetragen.
 \begin{table}
   \centering
-  \caption{Messwerte für die Hysterese}
+  \caption{Messwerte von der magnetischen Flussdicht $B$ in Abhängigkeit von dem Strom $I$ bei Erhöhung so wie für Verringerung der Stromstärke damit eine Hysteresekurve erstellt werden kann.}
   \label{tab:hyst}
 \begin{tabular}{c c | c c}
   \toprule
- Strom $I/\si{\ampere}$  & Magnetfeld $B/\si{\milli\tesla}$  & $I/\si{\ampere}$ & $B/\si{\milli\tesla}$ \\
+ $I/\si{\ampere}$  & $B/\si{\milli\tesla}$  & $I/\si{\ampere}$ & $B/\si{\milli\tesla}$ \\
   \midrule
   1   &  70  &  20  &  1015 \\
   2   &  120 &  19  &   986 \\
@@ -137,7 +136,7 @@ in der Abblidung \ref{fig:hyst} aufgetragen.
    \label{fig:hyst}
  \end{figure}
 
-Um Später die Benötigten B-Felder Zu bestimmen wird eine Ausgleichsrechnung
+Um später die Benötigten B-Felder zu bestimmen wird eine Ausgleichsrechnung
 an den Messwerten bei steigendem Strom durch geführt.
 Als Ansatz wird die Funktion
 \begin{align}
@@ -155,8 +154,8 @@ Landé-Faktoren zu berechnen, müssen zunächst aus den
 aufgenommenen Bildern \ref{fig:rot}-\ref{fig:blau_pi} $\Delta s$ und $\delta s$ bestimmt werden.
 \footnote{$\Delta s$ und $\delta s$ wurden mit Hilfe des Lineartools von Paint gemessen.}
 Die entsprechen Werte sind in der Tabelle \ref{tab:ds}
-aufgelistet.
-\subsubsection{\texorpdfstring{$\sigma$}{TEXT}-Rot}
+aufgelistet. Es wurde bei dem  Licht
+
 \begin{figure}
    \centering
    \begin{subfigure}{0.9\textwidth}
@@ -171,7 +170,7 @@ aufgelistet.
      \caption{}
      \label{fig:rotB=!0}
    \end{subfigure}
-\caption{Interferenzbilder einmal für $B=0$ \ref{fig:rotB=0} und für $B\neq0$ \ref{fig:rotB=!0}}
+\caption{Interferenzbilder für den $sigma$-Übergang  der roten Spektrallinie einmal für $B=0$ \ref{fig:rotB=0} und für $B\neq0$ \ref{fig:rotB=!0}}
 \label{fig:rot}
 \end{figure}
 \FloatBarrier
@@ -191,14 +190,12 @@ aufgelistet.
      \caption{}
      \label{fig:blau_sigB=!0}
    \end{subfigure}
-\caption{Interferenzbilder einmal für $B=0$ \ref{fig:blau_sigB=0} und für $B\neq0$ \ref{fig:blau_sigB=!0}}
+\caption{Interferenzbilder für den $sigma$-Übergang  der blauem Spektrallinie einmal für $B=0$ \ref{fig:blau_sigB=0} und für $B\neq0$ \ref{fig:blau_sigB=!0}}
 \label{fig:blau_sig}
 \end{figure}
 
 
 
-\FloatBarrier
-\subsubsection{\texorpdfstring{$\pi$}{TEXT}-Blau}
 
 \begin{figure}
    \centering
@@ -214,7 +211,7 @@ aufgelistet.
      \caption{}
      \label{fig:blau_piB=!0}
    \end{subfigure}
-\caption{Interferenzbilder einmal für $B=0$ \ref{fig:blau_piB=0} und für $B\neq0$ \ref{fig:blau_piB=!0}}
+\caption{Interferenzbilder für den $pi$-Übergang bei der blauem Spektrallinie einmal für $B=0$ \ref{fig:blau_piB=0} und für $B\neq0$ \ref{fig:blau_piB=!0}}
 \label{fig:blau_pi}
 \end{figure}
 
@@ -235,9 +232,9 @@ Blau&  $\sigma$ & 210 & 100 & 95 & 97.5\pm2.5 \\
 \end{tabular}
 \end{table}
 
-Aus den gemessenen $\Delta s$ und $\delta s$
-für die verschieden Messungen kann durch
-die Formel \eqref{eqn:dlam} die
+Aus den gemessenen $\Delta s$ und $\delta s$,
+für die verschieden Messungen, kann durch
+die Formel \eqref{eqn:dlam}
 die Wellenlängenänderung
 \begin{align}
   \delta\lambda=\frac{\delta s}{\Delta s}\cdot \Delta \lambda_\mathrm{D} \label{eqn:dlam}
@@ -263,13 +260,13 @@ sowie der gemessene Strom $I$ und die Flussdichte $B$, die aus der bestimmten Fi
   \label{tab:messgij}
 \begin{tabular}{c c c c c c c}
   \toprule
-& & $I/\si{\ampere}$  & $B/\si{\milli\tesla}$ & $\delta\lambda$ /\si{\pico\meter}  &  $\Delta E / \si{\micro\electronvolt}$ & $g_ij$ \\
+& & $I/\si{\ampere}$  & $B/\si{\tesla}$ & $\delta\lambda$ /\si{\pico\meter}  &  $\Delta E / \si{\micro\electronvolt}$ & $g_ij$ \\
 \midrule
-Rot&$\sigma $ & 11,8\pm0,5 & 13,6\pm1,3 & 1,02\pm0,14  \\
+Rot&$\sigma $ & 11,8\pm0,5 & 0,69\pm0,06 & 13,6\pm1,3 &  41\pm & 1,02\pm0,14  \\
 \midrule
 \midrule
-Blau&$\sigma$ &  5,1\pm0,5 & 6,3\pm0,2  &33,7\pm0,9 & 1,88\pm0,26    \\
-&  $\pi$      & 17,0\pm0,5 & 5,3\pm0    &28,3\pm0   &  1,53\pm0,04  \\
+Blau&$\sigma$ &  5,1\pm0,5 & 0,31\pm0,04 & 6,3\pm0,2  &33,7\pm0,9 & 1,88\pm0,26    \\
+&  $\pi$      & 17,0\pm0,5 & 0,92\pm0,07  & 5,3\pm0    &28,3\pm0   &  0,53\pm0,04  \\
 \bottomrule
 \end{tabular}
 \end{table}

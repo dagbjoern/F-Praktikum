@@ -130,15 +130,15 @@ plt.plot(I1,B1,'xr',label=r'Messwerte')
 plt.plot(I2,B2,'xr',)
 
 #plt.plot(T1[55:],(I1[55:]),'bx',label=r'Untergrund')
-plt.plot(I_lin,hysterese(I_lin,*params_hyst),'c-',label=r'Fit')
+plt.plot(I_lin,hysterese(I_lin,*params_hyst),'c-',label=r'Fit-Funktion')
 #plt.plot(I_lin,hysterese(I_lin,1000,0,10),'g-')
 #plt.plot(x,gerade(x,m_untergrund1,b_untergrund1),'k-',label=r'Untergrund fit linregress')
 # plt.plot(T1[:j],I1[:j],'mx',label=r'Messpunkte ohne Untergrund')
 # plt.plot(T1[j:],I1[j:]-gerade(T1[j:],*params_untergund1),'mx',)
 # plt.plot(T1,I1,'kx',label=r'Messpunkte mit Untergrund')
 plt.legend(loc='best')
-#plt.xlabel(r'Strom $I/ \si{\ampere} $')
-#plt.ylabel(r'Magnetfeld $B/ \si{\milli\tesla}$')
+plt.xlabel(r'Strom $I/ \si{\ampere} $')
+plt.ylabel(r'Magnetfeld $B/ \si{\milli\tesla}$')
 plt.savefig('build/plot_hyst.pdf')
 
 
@@ -188,9 +188,9 @@ print('A=',A)
 print('I_0=',x0)
 print('C=',C)
 
-I_rot=unp.uarray(11.8,0.5)
-I_blau_sig=unp.uarray(5.1,0.5)
-I_blau_pi=unp.uarray(17.0,0.5)
+I_rot=unp.uarray(11.8,0.1)
+I_blau_sig=unp.uarray(5.1,0.1)
+I_blau_pi=unp.uarray(17.0,0.1)
 
 
 B_rot=hysterese_unp(I_rot,A,x0,C)/1000
@@ -204,6 +204,8 @@ d_E_lam_rot=d_E_lam(lam_rot,d_lam_rot)
 print('d_E_lam_rot',d_E_lam_rot/const.e)
 print('g_rot',g_mess(d_E_lam_rot,B_rot))
 
+g_ij_rot=g_mess(d_E_lam_rot,B_rot)
+
 print('blau B_sig',B_blau_sig)
 d_lam_sig_blau=d_lam(blau_sig_Ds,blau_sig_ds,DlamD_blau)
 print('d_lam_sig_blau',d_lam_sig_blau)
@@ -211,6 +213,7 @@ d_E_lam_blau_sig=d_E_lam(lam_blau,d_lam_sig_blau)
 print('d_E_lam_blau_sig',d_E_lam_blau_sig/const.e)
 print('g_blau_sig',g_mess(d_E_lam_blau_sig,B_blau_sig))
 
+g_ij_blau_sig=g_mess(d_E_lam_blau_sig,B_blau_sig)
 
 print('blau_B_pi',B_blau_pi)
 d_lam_pi_blau=d_lam(blau_pi_Ds,blau_pi_ds,DlamD_blau)
@@ -218,3 +221,13 @@ print('d_lam_pi_blau',d_lam_pi_blau)
 d_E_lam_blau_pi=d_E_lam(lam_blau,d_lam_pi_blau)
 print('d_E_lam_blau_pi',d_E_lam_blau_pi/const.e)
 print('g_blau_pi',g_mess(d_E_lam_blau_pi,B_blau_pi))
+
+g_ij_blau_pi=g_mess(d_E_lam_blau_pi,B_blau_pi)
+
+def abweich(mess,theo):
+    return(mess-theo)/theo
+
+#Abweichungen
+print('abweich rot sigma',abweich(np.abs(g_ij_rot),1),'theorie',1)
+print('abweich blau sigma',abweich(np.abs(g_ij_blau_sig),(2+1.5)/2),'theorie',(2+1.5)/2)
+print('abweich blau pi',abweich(np.abs(g_ij_blau_pi),0.5),'theorie',0.5)
