@@ -12,12 +12,16 @@ from scipy.integrate import simps
 from tabulate import tabulate
 
 
-I1, T1 = np.genfromtxt('messung1.txt',unpack=True)
+xB_0, IB_0 = np.genfromtxt('OhneBFeld.txt',unpack=True)
+x1, I1 = np.genfromtxt('0.4Ampere.txt',unpack=True)
+x2, I2 = np.genfromtxt('0.5Ampere.txt',unpack=True)
+x3, I3 = np.genfromtxt('0.6Ampere.txt',unpack=True)
+x4, I4 = np.genfromtxt('0.735Ampere.txt',unpack=True)
+x5, I5 = np.genfromtxt('0.8Ampere.txt',unpack=True)
+x6, I6 = np.genfromtxt('0.91Ampere.txt',unpack=True)
+#x7, I7 = np.genfromtxt('0.4Ampere.txt',unpack=True)
 
-I2, T2 = np.genfromtxt('messung2.txt',unpack=True)
 
-T1=T1+273.15
-T2=T2+273.15
 
 
 
@@ -29,312 +33,182 @@ T2=T2+273.15
 def gerade(x,m,b):
     return m*x+b
 
-def ef(x,a,b,c):
-    return a*np.exp(c*x)+b
 #linerare regression
 
 # m_untergrund1 , b_untergrund1 , r ,p ,std_m_untergrund1 =stats.linregress(T1[55:],(I1[55:]))
 
 # std_b_untergrund1=fehler_b(std_m_untergrund1,T1[55:])
 
-params_untergund1 , cov_untergrund1 = curve_fit(gerade ,(T1[55:]),(I1[55:]))
 
 
 # print('lin ',std_m_untergrund1,std_b_untergrund1)
-print('params',params_untergund1)
-print('fehler',np.sqrt(np.diag(cov_untergrund1)))
+#print('params',params_untergund1)
+#print('fehler',np.sqrt(np.diag(cov_untergrund1)))
 
 
 
 
 
-x=np.linspace(200,300)
-j=0
-for i in T1:
-    if (gerade(i,*params_untergund1)<0):
-        j=j+1
-print(j)
+#x=np.linspace(200,300)
+#j=0
+#for i in T1:
+#    if (gerade(i,*params_untergund1)<0):
+#        j=j+1
+#print(j)
+def gauss(x,a,b,c,d):
+    return a*np.exp(-(x-b)**2/(2*c**2))+d
+
+params_0 , cov_0 = curve_fit(gauss,xB_0[30:65],IB_0[30:65],p0=[850,7,0.5,150])
+
+fehler_0=np.sqrt(np.diag(cov_0))
 
 
 
 plt.figure(1)
-plt.plot(T1,I1,'kx',label=r'Messwerte')
-#plt.plot(T1[:25],(I1[:25]),'rx',label=r'Fit')
-plt.plot(T1[55:],(I1[55:]),'bx',label=r'Untergrund')
-#plt.plot(x,gerade(x,*params_untergund1),'c-',label=r'Untergrund fit')
-#plt.plot(x,gerade(x,m_untergrund1,b_untergrund1),'k-',label=r'Untergrund fit linregress')
-# plt.plot(T1[:j],I1[:j],'mx',label=r'Messpunkte ohne Untergrund')
-# plt.plot(T1[j:],I1[j:]-gerade(T1[j:],*params_untergund1),'mx',)
-# plt.plot(T1,I1,'kx',label=r'Messpunkte mit Untergrund')
+plt.plot(xB_0, IB_0,'kx',alpha=0.5,label=r'Messwerte')
+plt.plot(xB_0[30:65],gauss(xB_0[30:65],*params_0),'-',label=r'Fit')
+#plt.plot(xB_0,gauss(xB_0,900,7,0.5),'--r',label=r'Fit')
+
 plt.legend(loc='best')
-plt.xlabel(r'Temperatur $T/ \si{\kelvin}$')
-plt.ylabel(r'Strom $I/ \si{\ampere} $')
-plt.savefig('build/plot1_messwerte.pdf')
+#plt.xlabel(r' $Position$')
+#plt.ylabel(r'Strom $I/ \si{\ampere} $')
+plt.savefig('build/plot_B=0.pdf')
 
-I1_richtig=np.append(I1[:j],I1[j:]-gerade(T1[j:],*params_untergund1))
 
+Abstand=np.zeros([6])
+Strom=np.array([0.4,0.5,0.6,0.735,0.8,0.91])
+
+#params_1 , cov_1 = curve_fit(gerade ,(T1[55:]),(I1[55:]))
+params_1u , cov_1u = curve_fit(gauss,x1[30:46],I1[30:46],p0=[400,6,0.5,150])
+params_1o , cov_1o = curve_fit(gauss,x1[54:68],I1[54:68],p0=[400,8,0.5,150])
+
+params_1unten = unp.uarray(params_1u,np.sqrt(np.diag(cov_1u)))
+params_1oben = unp.uarray(params_1o,np.sqrt(np.diag(cov_1o)))
+Abstand_1 = params_1oben[1] - params_1unten[1]
+print(Abstand_1)
 
 plt.figure(2)
-#plt.plot(T1,I1,'bx',label=r'Graph')
-plt.plot(x,gerade(x,*params_untergund1),'c-',label=r'Untergrund-Fit')
+plt.plot(x1,I1,'kx',alpha=0.5,label=r'Messwerte')
+plt.plot(x1[30:47],gauss(x1[30:47],*params_1u),'-',label=r'Fit 1')
+plt.plot(x1[54:68],gauss(x1[54:68],*params_1o),'-',label=r'Fit 2')
 #plt.plot(x,gerade(x,m_untergrund1,b_untergrund1),'k-',label=r'Untergrund fit linregress')
-plt.plot(T1,I1,'kx',label=r'Messpunkte')
-plt.plot(T1,I1_richtig,'mx',label=r'ohne Untergrund')
 plt.legend(loc='best')
-plt.xlabel(r'Temperatur $T/ \si{\kelvin}$')
-plt.ylabel(r'Strom $I/ \si{\ampere} $')
-plt.savefig('build/plot1_korrektur.pdf')
+#plt.xlabel(r' $Position$')
+#plt.ylabel(r'Strom $I/ \si{\ampere} $')
+plt.savefig('build/plot1.pdf')
 
 
-#Plot 2
+params_2u , cov_2u = curve_fit(gauss,x2[27:43],I2[27:43],p0=[400,6,0.5,150])
+params_2o , cov_2o = curve_fit(gauss,x2[55:70],I2[55:70],p0=[400,8,0.5,150])
 
-
-params_untergund2 , cov_untergrund2 = curve_fit(gerade ,T2[55:] , I2[55:])
-
-print('params',params_untergund2)
-print('fehler',np.sqrt(np.diag(cov_untergrund2)))
-
-
-
-j=0
-for i in T2:
-    if (gerade(i,*params_untergund2)<0):
-        j=j+1
-print(j)
-
-
-
-I2_richtig=np.append(I2[:j],I2[j:]-gerade(T2[j:],*params_untergund2))
-
+params_2unten = unp.uarray(params_2u,np.sqrt(np.diag(cov_2u)))
+params_2oben = unp.uarray(params_2o,np.sqrt(np.diag(cov_2o)))
+Abstand_2 = params_2oben[1] - params_2unten[1]
+print(Abstand_2)
 
 plt.figure(3)
-plt.plot(T2,I2,'kx',label=r'Messwerte')
-#plt.plot(T2[:25],(I2[:25]),'rx',label=r'Fit')
-plt.plot(T2[53:],(I2[53:]),'bx',label=r'Untergrund')
-# plt.plot(x,gerade(x,*params_untergund2),'c-',label=r'Untergrund fit')
-# plt.plot(T2[:j],I2[:j],'mx',label=r'Messpunkte ohne Untergrund')
-# plt.plot(T2[j:],I2[j:]-gerade(T2[j:],*params_untergund2),'mx',)
+plt.plot(x2, I2,'kx',alpha=0.5,label=r'Messwerte')
+plt.plot(x2[27:43],gauss(x2[27:43],*params_2u),'-',label=r'Fit 1')
+plt.plot(x2[55:70],gauss(x2[55:70],*params_2o),'-',label=r'Fit 2')
 plt.legend(loc='best')
-plt.xlabel(r'Temperatur $T/ \si{\kelvin}$')
-plt.ylabel(r'Strom $I/ \si{\ampere} $')
-plt.savefig('build/plot2_messwerte.pdf')
+#plt.xlabel(r' $Position$')
+#plt.ylabel(r'Strom $I/ \si{\ampere} $')
+plt.savefig('build/plot2.pdf')
+
+params_3u , cov_3u = curve_fit(gauss,x3[33:45],I3[33:45],p0=[350,6,0.5,10])
+params_3o , cov_3o = curve_fit(gauss,x3[62:75],I3[62:75],p0=[350,7.5,0.5,10])
+
+params_3unten = unp.uarray(params_3u,np.sqrt(np.diag(cov_3u)))
+params_3oben = unp.uarray(params_3o,np.sqrt(np.diag(cov_3o)))
+Abstand_3 = params_3oben[1] - params_3unten[1]
+print(Abstand_3)
+
 
 plt.figure(4)
-# plt.plot(T2[:25],(I2[:25]),'rx',label=r'Messpunkte für lineare Reg.')
-# plt.plot(T2[53:],(I2[53:]),'gx',label=r'Messpunkte für Untergrund')
-plt.plot(x,gerade(x,*params_untergund2),'c-',label=r'Untergrund-Fit')
-plt.plot(T2,I2,'kx',label=r'Messwerte')
-plt.plot(T2,I2_richtig,'mx',label=r'ohne Untergrund')
+plt.plot(x3, I3,'kx',alpha=0.5,label=r'Messwerte')
+plt.plot(x3[33:45],gauss(x3[33:45],*params_3u),'-',label=r'Fit 1')
+plt.plot(x3[62:75],gauss(x3[62:75],*params_3o),'-',label=r'Fit 2')
 plt.legend(loc='best')
-plt.xlabel(r'Temperatur $T/ \si{\kelvin}$')
-plt.ylabel(r'Strom $I/ \si{\ampere} $')
-plt.savefig('build/plot2_korrektur.pdf')
+#plt.xlabel(r' $Position$')
+#plt.ylabel(r'Strom $I/ \si{\ampere} $')
+plt.savefig('build/plot3.pdf')
 
 
 
-params_fit1 , cov_fit1 = curve_fit(gerade ,1/T1[:30] ,np.log((I1_richtig[:30])))
 
+params_4u , cov_4u = curve_fit(gauss,x4[29:45],I4[29:45],p0=[350,6,0.5,10])
+params_4o , cov_4o = curve_fit(gauss,x4[62:80],I4[62:80],p0=[350,7.5,0.5,10])
 
-print('params cool1',params_fit1)
-print('fehler cool1',np.sqrt(np.diag(cov_fit1)))
-m_1=unp.uarray(params_fit1[0],np.sqrt(np.diag(cov_fit1)[0]))
-b_1=unp.uarray(params_fit1[1],np.sqrt(np.diag(cov_fit1)[0]))
-print('m_1',m_1,' \n ','b_1',b_1)
-
+params_4unten = unp.uarray(params_4u,np.sqrt(np.diag(cov_4u)))
+params_4oben = unp.uarray(params_4o,np.sqrt(np.diag(cov_4o)))
+Abstand_4 = params_4oben[1] - params_4unten[1]
+print(Abstand_4)
 
 
 plt.figure(5)
-plt.plot(1/(T1[:30]),np.log((I1_richtig[:30])),'gx',label=r'Näherung')
-plt.plot(1/(T1[:30]),gerade(1/(T1[:30]),*params_fit1),'c-',label=r'Fit')
-#plt.plot(1/(T2[:20]),np.log((I2[:20])),'bx',label=r'log Graph')
-
+plt.plot(x4, I4,'kx',alpha=0.5,label=r'Messwerte')
+plt.plot(x4[29:45],gauss(x4[29:45],*params_4u),'-',label=r'Fit 1')
+plt.plot(x4[62:80],gauss(x4[62:80],*params_4o),'-',label=r'Fit 2')
 plt.legend(loc='best')
-plt.xlabel(r' $1/T  \ \si{\per\kelvin}$')
-plt.ylabel(r'$\log(I)$')
-plt.savefig('build/plot3_messung1.pdf')
+#plt.xlabel(r' $Position$')
+#plt.ylabel(r'Strom $I/ \si{\ampere} $')
+plt.savefig('build/plot4.pdf')
 
 
 
-params_fit2 , cov_fit2 = curve_fit(gerade ,1/T2[:30] ,np.log((I2_richtig[:30])))
+params_5u , cov_5u = curve_fit(gauss,x5[29:45],I5[29:45],p0=[350,6,0.5,10])
+params_5o , cov_5o = curve_fit(gauss,x5[62:78],I5[62:78],p0=[350,7.5,0.5,10])
 
-
-print('params cool2',params_fit2)
-print('fehler cool2',np.sqrt(np.diag(cov_fit2)))
-m_2=unp.uarray(params_fit2[0],np.sqrt(np.diag(cov_fit2)[0]))
-b_2=unp.uarray(params_fit2[1],np.sqrt(np.diag(cov_fit2)[0]))
-print('m_1',m_2,'/n','b_2',b_2)
+params_5unten = unp.uarray(params_5u,np.sqrt(np.diag(cov_5u)))
+params_5oben = unp.uarray(params_5o,np.sqrt(np.diag(cov_5o)))
+Abstand_5 = params_5oben[1] - params_5unten[1]
+print(Abstand_5)
 
 
 plt.figure(6)
-plt.plot(1/(T2[:30]),np.log((I2_richtig[:30])),'gx',label=r'Näherung')
-plt.plot(1/(T2[:30]),gerade(1/(T2[:30]),*params_fit2),'c-',label=r'Fit')
-#plt.plot(1/(T2[:20]),np.log((I2[:20])),'bx',label=r'log Graph')
+plt.plot(x5, I5,'kx',alpha=0.5,label=r'Messwerte')
 plt.legend(loc='best')
-plt.xlabel(r' $1/T  \ \si{\per\kelvin}$')
-plt.ylabel(r'$\log(I)$')
-plt.savefig('build/plot3_messung2.pdf')
+plt.plot(x5[29:45],gauss(x5[29:45],*params_5u),'-',label=r'Fit 1')
+plt.plot(x5[62:78],gauss(x5[62:78],*params_5o),'-',label=r'Fit 2')
+#plt.xlabel(r' $Position$')
+#plt.ylabel(r'Strom $I/ \si{\ampere} $')
+plt.savefig('build/plot5.pdf')
 
 
+params_6u , cov_6u = curve_fit(gauss,x6[29:43],I6[29:43],p0=[350,6,0.5,10])
+params_6o , cov_6o = curve_fit(gauss,x6[66:83],I6[66:83],p0=[350,7.5,0.5,10])
+
+params_6unten = unp.uarray(params_6u,np.sqrt(np.diag(cov_6u)))
+params_6oben = unp.uarray(params_6o,np.sqrt(np.diag(cov_6o)))
+Abstand_6 = params_6oben[1] - params_6unten[1]
+print(Abstand_6)
 
 
-print('W bei erster messung',-m_1*const.k/const.e)
-
-
-W_reg1=-m_1*const.k
-
-
-print('W bei zweiten messung',-m_2*const.k/const.e)
-
-
-W_reg2=-m_2*const.k
 
 
 plt.figure(7)
-plt.plot(T1,I1_richtig,'mx',label=r'Korr. Messwerte')
-plt.plot(T1[:30],(I1_richtig[:30]),'gx',label=r'Näherung')
-#plt.plot(T2[53:],(I2[53:]),'bx',label=r'Untergrund')
-# plt.plot(x,gerade(x,*params_untergund2),'c-',label=r'Untergrund fit')
-# plt.plot(T2[:j],I2[:j],'mx',label=r'Messpunkte ohne Untergrund')
-# plt.plot(T2[j:],I2[j:]-gerade(T2[j:],*params_untergund2),'mx',)
+plt.plot(x6, I6,'kx',alpha=0.5,label=r'Messwerte')
+plt.plot(x6[29:43],gauss(x6[29:43],*params_6u),'-',label=r'Fit 1')
+plt.plot(x6[66:83],gauss(x6[66:83],*params_6o),'-',label=r'Fit 2')
 plt.legend(loc='best')
-plt.xlabel(r'Temperatur $T/ \si{\kelvin}$')
-plt.ylabel(r'Strom $I/ \si{\ampere} $')
-plt.savefig('build/plot1_fit.pdf')
+#plt.xlabel(r' $Position$')
+#plt.ylabel(r'Strom $I/ \si{\ampere} $')
+plt.savefig('build/plot6.pdf')
 
 
+Abstande=unp.uarray([noms(Abstand_1),noms(Abstand_2),noms(Abstand_3),noms(Abstand_4),noms(Abstand_5),noms(Abstand_6)],[stds(Abstand_1),stds(Abstand_2),stds(Abstand_3),stds(Abstand_4),stds(Abstand_5),stds(Abstand_6)])
+print(Abstande)
+
+def gerade(x,m,b):
+    return m*x+b
+
+params_lin , cov_lin = curve_fit(gerade,Strom,noms(Abstande))
 
 
 plt.figure(8)
-plt.plot(T2,I2_richtig,'mx',label=r'Korr. Messwerte')
-plt.plot(T2[:30],(I2_richtig[:30]),'gx',label=r'Näherung')
-#plt.plot(T2[53:],(I2[53:]),'bx',label=r'Untergrund')
-# plt.plot(x,gerade(x,*params_untergund2),'c-',label=r'Untergrund fit')
-# plt.plot(T2[:j],I2[:j],'mx',label=r'Messpunkte ohne Untergrund')
-# plt.plot(T2[j:],I2[j:]-gerade(T2[j:],*params_untergund2),'mx',)
+plt.errorbar(Strom, noms(Abstande),xerr=0,yerr=stds(Abstande),LineStyle='none',label=r'Messwerte')
+plt.plot(Strom, gerade(Strom,*params_lin))
 plt.legend(loc='best')
-plt.xlabel(r'Temperatur $T/ \si{\kelvin}$')
-plt.ylabel(r'Strom $I/ \si{\ampere} $')
-plt.savefig('build/plot2_fit.pdf')
-
-
-
-
-
-#plt.figure(9)
-#plt.plot(T1,I1,'bx',label=r'Graph')
-#plt.plot(x,gerade(x,*params_untergund1),'c-',label=r'Untergrund fit')
-#plt.plot(x,gerade(x,m_untergrund1,b_untergrund1),'k-',label=r'Untergrund fit linregress')
-#plt.plot(T1,I1,'kx',label=r'Messpunkte mit Untergrund')
-#plt.fill_between(T1,0,I1_richtig,label=r'Fläche',alpha=0.4,hatch='//',edgecolor='k')
-#plt.legend(loc='best')
-#plt.xlabel(r'Temperatur $T/ \si{\kelvin}$')
-#plt.ylabel(r'Strom $I/ \si{\ampere} $')
-#plt.savefig('build/plot4_int1.pdf')
-
-
-#plt.figure(10)
-#plt.plot(T2,I2,'bx',label=r'Messwerte')
-# plt.plot(T2[:25],(I2[:25]),'rx',label=r'Messpunkte für lineare Reg.')
-# plt.plot(T2[53:],(I2[53:]),'gx',label=r'Messpunkte für Untergrund')
-#plt.plot(x,gerade(x,*params_untergund2),'c-',label=r'Untergrund fit')
-#plt.plot(T2,I2_richtig,'mx',label=r'Messpunkte ohne Untergrund')
-#plt.fill_between(T2,0,I2_richtig,label=r'Fläche',alpha=0.4,hatch='//',edgecolor='k')
-#plt.tight_layout()
-#plt.legend(loc='best')
-#plt.xlabel(r'Temperatur $T/ \si{\kelvin}$')
-#plt.ylabel(r'Strom $I/ \si{\ampere} $')
-#plt.savefig('build/plot4_int2.pdf')
-
-
-A_1=np.array(I1_richtig)
-
-for index, value in enumerate(I1_richtig):
-    A_1[index]= trapz(I1_richtig[index:],T1[index:])
-
-print(A_1)
-
-
-
-
-params_reg1 , cov_reg1 = curve_fit(gerade ,1/T1[:55],np.log(A_1[:55]/(I1_richtig[:55])))
-
-
-
-m_1reg=unp.uarray(params_reg1[0],np.sqrt(np.diag(cov_reg1)[0]))
-b_1reg=unp.uarray(params_reg1[1],np.sqrt(np.diag(cov_reg1)[0]))
-print('m_1reg',m_1reg,'/n','b_1reg',b_1reg)
-print('W bei erster messung mit intergral',m_1reg*const.k/const.e)
-
-
-W_int1=m_1reg*const.k
-
-
-plt.figure(11)
-plt.plot(1/T1[:len(A_1)-1],np.log(A_1[:len(A_1)-1]/(I1_richtig[:len(A_1)-1])),'kx',label=r'Messwerte')
-plt.plot(1/T1[:55],np.log(A_1[:55]/(I1_richtig[:55])),'rx',label=r'benutze Messwerte')
-
-# plt.plot(T2[53:],(I2[53:]),'gx',label=r'Messpunkte für Untergrund')
-plt.plot(1/T1[:55],gerade(1/T1[:55],*params_reg1),'c-',label=r'Fit')
-#plt.plot(T2,I2_richtig,'mx',label=r'Messpunkte ohne Untergrund')
-plt.legend(loc='best')
-plt.xlabel(r'$1/T \  \si{\per\kelvin}$')
-plt.ylabel(r'$ B(\frac{1}{T}) $')
-plt.savefig('build/plot5_1.pdf')
-
-
-
-
-A_2=np.array(I2_richtig)
-
-for index, value in enumerate(I2_richtig):
-    A_2[index]= trapz(I2_richtig[index:],T2[index:])
-
-
-
-params_reg2 , cov_reg2 = curve_fit(gerade ,1/T2[:55],np.log(np.abs(A_2[:55]/I2_richtig[:55])))
-
-
-print(tabulate({"log int 2":np.round(np.log(A_2[:55]/(I2_richtig[:55])),2),"1/T  2":np.round(1/T2[:55],5),"ln int 1":np.round(np.log(A_1[:55]/(I1_richtig[:55])),2),"1/T1":np.round(1/T1[:55],5)},headers="keys",tablefmt="latex"))
-#print(tabulate({"Temperatur T1":T1,"Strom I1":I1*10**12,"Temperatur T2":T2,"Strom I2":I2*10**12 },headers="keys",tablefmt="latex"))
-
-m_2reg=unp.uarray(params_reg2[0],np.sqrt(np.diag(cov_reg2)[0]))
-b_2reg=unp.uarray(params_reg2[1],np.sqrt(np.diag(cov_reg2)[0]))
-print('m_2',m_2reg,'/n','b_2',b_2reg)
-
-print('W bei zweiter messung mit intergral',m_2reg*const.k/const.e)
-
-W_int2=m_2reg*const.k
-
-
-plt.figure(12)
-plt.plot(1/T2[:len(A_2)-1],np.log(A_2[:len(A_2)-1]/(I2_richtig[:len(A_2)-1])),'kx',label=r'Messwerte')
-plt.plot(1/T2[:55],np.log(A_2[:55]/(I2_richtig[:55])),'rx',label=r'Benutze Messwerte')
-# plt.plot(T2[53:],(I2[53:]),'gx',label=r'Messpunkte für Untergrund')
-plt.plot(1/T2[:len(A_2)-1],gerade(1/T2[:len(A_2)-1],*params_reg2),'c-',label=r'Fit')
-#plt.plot(T2,I2_richtig,'mx',label=r'Messpunkte ohne Untergrund')
-plt.legend(loc='best')
-plt.xlabel(r'$1/T  \ \si{\per\kelvin}$')
-plt.ylabel(r'$B(\frac{1}{T})$')
-plt.savefig('build/plot5_2.pdf')
-
-
-
-def tau(T_max,w,b):
-    return (const.k * (T_max**2))/(b*w) *  unp.exp(-w/(const.k * T_max))
-
-
-
-
-#heizraten
-b_h1=1.2/60
-b_h2=2/60
-
-T_max1=unp.uarray(260,1)
-T_max2=unp.uarray(263,1)
-
-
-print('tau1reg',tau(T_max1,W_reg1,b_h1))
-print('tau1int',tau(T_max1,W_int1,b_h1))
-
-print('tau2reg',tau(T_max2,W_reg2,b_h2))
-print('tau2int',tau(T_max2,W_int2,b_h2))
+ #plt.xlabel(r' $Position$')
+# #plt.ylabel(r'Strom $I/ \si{\ampere} $')
+plt.savefig('build/lin_plot.pdf')

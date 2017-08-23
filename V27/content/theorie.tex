@@ -10,7 +10,7 @@ Deren Beträge sind wie folgt definiert durch die Quantenzahlen $\textit{l}$ und
 Den beiden Drehimpulsen kann ein magnetischen Moment zugeordnet werden:
 \begin{align}
   \vec{\mu_\mathrm{\textit{l}}}&=-\mu_\mathrm{B}\sqrt{\textit{l}(\textit{l}+1)}\vec{\textit{l}_\mathrm{e}}\\
-  \vec{\mu_\mathrm{s}}&=-\mu_\mathrm{B} g_\mathrm{s}\sqrt{s(s+1)}\vec{s_\mathrm{e}}\\
+  \vec{\mu_\mathrm{s}}&=-\mu_\mathrm{B} g_\mathrm{s}\sqrt{s(s+1)}\vec{s_\mathrm{e}}
 \end{align}
 Es besteht eine Proportionalität zum Bohrschen-Magneton $\mu_\mathrm{B}:=\frac{1}{2}e_\mathrm{0}\frac{\hbar}{m_\mathrm{0}}$
 (mit $e_\mathrm{0}$ der Elektronenladung und $m_\mathrm{0}$ der Elektronenmasse).
@@ -25,15 +25,15 @@ In der Natur treten zwei Grenzfälle auf, die im Folgenden thematisiert werden:\
 zu einem Gesamtbahndrehimpuls der Elektronenhülle $\vec{L}=\sum_i l_i$
 bzw. Gesamtspin der Elektronenhülle $\vec{S}=\sum_i s_i$ zusammen.
 Der Gesamtdrehimpuls hat den Betrag
-\begin{align*}
+\begin{align}
  |\vec{L}|=\sqrt{L(L+1)\hbar}
-\end{align*}
+\end{align}
 und ist eine quantisierte Größe:
 $L$ ist ganzzahlig und nimmt die Werte $0,1,2 ,\ \text{oder} ,\ 3$ an.
 Ähnlich sieht es bei dem Gesamtspin aus, der Betrag entspricht
-\begin{align*}
+\begin{align}
  |\vec{S}|=\sqrt{S(S+1)\hbar}
-\end{align*}
+\end{align}
 mit der Quantenzahl $S$. Die kann Werte von $\frac{N}{2} ,\ \text{bis} ,\ 0$
 ($N$ ist die Anzahl der Elektronen in den nicht abgeschlossenen Schalen)
 in halbzahligen Schritten annehmen.
@@ -53,16 +53,16 @@ Erst die Summe aller $\vec{j}_\mathrm{i}$ ergibt den Gesamtdrehimpuls der Elektr
 Für mittelschwere Atome besteht ein fließender Übergang.
 \\
 Das gesamte magnetische Moment $\vec{\mu}$ zum Gesamtdrehimpuls $\vec{J}$ ergibt sich aus der Vektorsumme der magnetischen Momente
-\begin{align*}
+\begin{align}
  \vec{\mu_\mathrm{L}}&=\mu_\mathrm{B}\sqrt{L(L+1)}\
  \intertext{und}\
  \vec{\mu_\mathrm{S}}&=\mu_\mathrm{B}g_\mathrm{s}\sqrt{S(S+1)}.
-\end{align*}
+\end{align}
 Die Richtungen von $\vec{\mu}$ und $\vec{J}$ fallen nicht zusammen, jedoch kann
 gezeigt werden, dass der zu $\vec{J}$ parallele Anteil von $\vec{\mu}$ beiträgt.
 Diese und weitere Überlegungen führen zum Betrag des magnetischen Momentes:
 \begin{align}
-  |\vec{\mu}_\mathrm{J}|\approx \mu_\mathrm{B}\sqrt{J(J+1)}\underbrace{\frac{3J(J+1)+S(S+1)-L(L+1)}{2J(J+1)}}_{g_\mathrm{J}}
+  |\vec{\mu}_\mathrm{J}|\approx \mu_\mathrm{B}\sqrt{J(J+1)}\underbrace{\frac{3J(J+1)+S(S+1)-L(L+1)}{2J(J+1)}}_{g_\mathrm{J}}\label{eqn:lande}
 \end{align}
 Hierbei bezeichnet $g_\mathrm{J}$ den Landé-Faktor.
 Unter deim Einfluss eines B-Feldes nehmen die Winkel zwischen $\vec{\mu}$ und $\vec{B}$ Werte an,
@@ -84,15 +84,15 @@ entspricht dabei der Energiedifferenz der beiden Zustände.
 Aus Rechnungen folgen Auswahlregeln für die Übergänge.
 Übergänge zwischen den Zuständen sind danach nur möglich wenn die
 Orientierungsquantenzahl $m$ sich um $\pm 1$ oder gar nicht ändert:
-\begin{align*}
+\begin{align}
   \Delta m = 0,\pm 1.
-\end{align*}
+\end{align}
 \subsection{Normaler Zeemann-Effekt}
 Beim normalen Zeemann-Effekt entspricht $S=0$ für alle $J:g_\mathrm{j}=1$,
 dies bedeutet die Unabhängigkeit der Verschiebung der Energieniveaus von den Quantenzahlen.
 Für jedes $L$ und $S$ gilt:
 \begin{align}
-  \Delta E=m\mu_\mathrm{B}B ,\,\,\,\,\ \text{für}\,\-J < m < J.
+  \Delta E=m\mu_\mathrm{B}B ,\,\,\,\,\ \text{für}\,\-J < m < J. \label{eqn:landean}
 \end{align}
 Es findet die Aufspaltung in die äquidistanten Unterniveaus statt, dies geschiecht auch im Angeregten Zustand.
 Ein Übergang nach den Auswahlregeln kann somit stattfinden.
@@ -126,7 +126,7 @@ Bei dem anomalen Zeemann-Effekt gilt $S \neq 0$ und damit hängen die Energiedif
 In diesem Fall ist $g_\mathrm{j}$ nicht automatisch $1$, sondern nimmt verschiedene Werte an.
 Die Energieverschiebung ist dann gegeben durch:
 \begin{align}
-  \Delta E= [m_\mathrm{1}g_\mathrm{J}(L_\mathrm{1},S_\mathrm{1},J_\mathrm{1})]-m_\mathrm{2}g_\mathrm{J}(L_\mathrm{2},S_\mathrm{2},J_\mathrm{2}).
+  \Delta E= [m_\mathrm{1}g_\mathrm{J}(L_\mathrm{1},S_\mathrm{1},J_\mathrm{1})]-m_\mathrm{2}g_\mathrm{J}(L_\mathrm{2},S_\mathrm{2},J_\mathrm{2}). \label{eqn:g_ji}
 \end{align}
 Die Indizes geben die Zordnung zu den Niveaus an.
 Die Aufspaltung ist wesentlich Linienreicher und ist in Abbildung \ref{fig:anomal} dargestellt.

@@ -7,8 +7,8 @@ zu einem das Dispersionsgebiet $\Delta\lambda$
 und das Auflösungsvermögen A der Lummer-Gehrcke-Platte
 für die unterschiedlichen Wellenlängen $\lambda=\SI{643.8}{\nano\meter}$
 und $\lambda=\SI{480.0}{\nano\meter}$.
-Das Dispersionsgebiet lässt sich durch die Formel(ADD) berechnen
-und für das Auflösungsvermögen wird die Formel (ADD) verwendet.
+Das Dispersionsgebiet lässt sich durch die Formel \eqref{eqn:dispersionsgebiet} berechnen
+und für das Auflösungsvermögen wird die Formel \eqref{eqn:aufloesung} verwendet.
 
 
 Diese sind in der Tabelle  \ref{tab:vorbereitung} aufgelistet.
@@ -54,7 +54,7 @@ Blau&$^3S_1$& 1 & 0 & 1 & 2,0\\
 \end{table}
 
 Desweiteren können die Lané-Faktoren für Übergänge
-bei dem anormalen Zeeman-Effekt durch die Formel (ADD) berechnet werden.
+bei dem anormalen Zeeman-Effekt durch die Formel \eqref{eqn:landean} berechnet werden.
 Die Berechneten Werte sind in der Tabelle \ref{tab:theo2}
 zu finden.
 
@@ -68,13 +68,15 @@ zu finden.
 Rot      &            &  \multicolumn{2}{c}{$^1P_1$}  & \multicolumn{2}{c}{$^1D_2$} &    \\
       & $\Delta m$ &   $m_1$&  $m_1g_1$            & $m_2$    & $m_2g_2$         & $g_{ij}$\\
 \midrule
-$\sigma$ &  -1   &    1 &  1,0     &  0  & 0,0  &  1,0  \\
+$\sigma$ &  -1 &    2 &  2,0     &  1  &  1,0  &  1,0  \\
+       &       &    1 &  1,0     &  0  &  0,0  &  1,0  \\
        &       &    0 &  0,0     & -1  & -1,0  &  1,0  \\
-$\pi$    &   0   &    1 &  1,0     &  1  &  1,0  &  0,0  \\
-       &       &    0 &  0,0     &  0  & 0,0  &  0,0  \\
-       &       &   -1 & -1,0     & -1  & -1,0 &  0,0 \\
-$\sigma$ &  +1   &    0 &  0,0     &  1  & 1,0  & -1,0  \\
-       &       &   -1 & -1,0     &  0  & 0,0  & -1,0  \\
+$\pi$    &   0   &    1 &  1,0   &  1  &  1,0  &  0,0  \\
+       &       &    0 &  0,0     &  0  & 0,0   &  0,0  \\
+       &       &   -1 & -1,0     & -1  & -1,0  &  0,0 \\
+$\sigma$ &  +1   &    0 &  0,0   &  1  & 1,0   & -1,0  \\
+       &       &   -1 & -1,0     &  0  & 0,0   & -1,0  \\
+       &       &   -2 & -2,0     & -1  & -1,0  & -1,0  \\
 \midrule
 \midrule
 Blau &            &  \multicolumn{2}{c}{$^3P_1$}  & \multicolumn{2}{c}{$^3P_1$} &    \\
@@ -170,11 +172,12 @@ aufgelistet. Es wurde bei dem  Licht
      \caption{}
      \label{fig:rotB=!0}
    \end{subfigure}
-\caption{Interferenzbilder für den $sigma$-Übergang  der roten Spektrallinie einmal für $B=0$ \ref{fig:rotB=0} und für $B\neq0$ \ref{fig:rotB=!0}}
+\caption{Interferenzbilder für den $\sigma$-Übergang
+ der roten Spektrallinie einmal für
+ $B=0$ Abb.\ref{fig:rotB=0} und für $B\neq0$ Abb.\ref{fig:rotB=!0}}
 \label{fig:rot}
 \end{figure}
 \FloatBarrier
-\subsubsection{\texorpdfstring{$\sigma$}{TEXT}-Blau}
 
 \begin{figure}
    \centering
@@ -190,7 +193,9 @@ aufgelistet. Es wurde bei dem  Licht
      \caption{}
      \label{fig:blau_sigB=!0}
    \end{subfigure}
-\caption{Interferenzbilder für den $sigma$-Übergang  der blauem Spektrallinie einmal für $B=0$ \ref{fig:blau_sigB=0} und für $B\neq0$ \ref{fig:blau_sigB=!0}}
+\caption{Interferenzbilder für den $\sigma$-Übergang
+  der blauem Spektrallinie einmal für $B=0$
+  Abb.\ref{fig:blau_sigB=0} und für $B\neq0$ Abb.\ref{fig:blau_sigB=!0}}
 \label{fig:blau_sig}
 \end{figure}
 
@@ -211,7 +216,10 @@ aufgelistet. Es wurde bei dem  Licht
      \caption{}
      \label{fig:blau_piB=!0}
    \end{subfigure}
-\caption{Interferenzbilder für den $pi$-Übergang bei der blauem Spektrallinie einmal für $B=0$ \ref{fig:blau_piB=0} und für $B\neq0$ \ref{fig:blau_piB=!0}}
+\caption{Interferenzbilder für den $\pi$-Übergang
+bei der blauem Spektrallinie einmal
+für $B=0$ Abb.\ref{fig:blau_piB=0}
+und für $B\neq0$ Abb.\ref{fig:blau_piB=!0}}
 \label{fig:blau_pi}
 \end{figure}
 
@@ -237,7 +245,7 @@ für die verschieden Messungen, kann durch
 die Formel \eqref{eqn:dlam}
 die Wellenlängenänderung
 \begin{align}
-  \delta\lambda=\frac{\delta s}{\Delta s}\cdot \Delta \lambda_\mathrm{D} \label{eqn:dlam}
+  \delta\lambda=\frac{1}{2}\frac{\delta s}{\Delta s}\cdot \Delta \lambda_\mathrm{D} \label{eqn:dlam}
 \end{align}
 bestimmt werden.
 Diese kann dafür genutzt werden den
@@ -245,7 +253,7 @@ Landé-Faktor $g_{ij}$ über die Formel \eqref{eqn:g_ji} zu berechnen.
 \begin{align}
 \lvert g_{ij}\rvert=\lvert \frac{\Delta E}{\mu_\mathrm{B}B}\rvert
 \intertext{dafür kann $\Delta E$ durch $\delta \lambda$ ausgedrückt werden,
-wobei beachtet werden muss, dass $\Delta E$ nicht linear mit $\lambda$ folglich gilt:}
+wobei beachtet werden muss, dass $\Delta E$ nicht linear in $\lambda$ ist, folglich gilt:}
 \lvert \Delta E\rvert =\lvert\frac{\partial E}{\partial \lambda} \delta \lambda \rvert= \lvert\frac{hc}{\lambda^2}\delta\lambda\rvert
 \intertext{und}
 g_{ij}=\frac{hc}{\lambda^2 \mu_\mathrm{B}B} \delta \lambda
