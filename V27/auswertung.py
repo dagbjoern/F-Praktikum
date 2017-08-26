@@ -125,29 +125,30 @@ print('C=',C)
 #hysterese
 
 I_lin=np.linspace(0,20)
-#plt.figure(1)
-#plt.plot(I1,B1,'xr',label=r'Messwerte')
-#plt.plot(I2,B2,'xr',)
-
-#plt.plot(T1[55:],(I1[55:]),'bx',label=r'Untergrund')
-#plt.plot(I_lin,hysterese(I_lin,*params_hyst),'c-',label=r'Fit-Funktion')
-#plt.plot(I_lin,hysterese(I_lin,1000,0,10),'g-')
-#plt.plot(x,gerade(x,m_untergrund1,b_untergrund1),'k-',label=r'Untergrund fit linregress')
-# plt.plot(T1[:j],I1[:j],'mx',label=r'Messpunkte ohne Untergrund')
-# plt.plot(T1[j:],I1[j:]-gerade(T1[j:],*params_untergund1),'mx',)
-# plt.plot(T1,I1,'kx',label=r'Messpunkte mit Untergrund')
-#plt.legend(loc='best')
-#plt.xlabel(r'Strom $I/ \si{\ampere} $')
-#plt.ylabel(r'Magnetfeld $B/ \si{\milli\tesla}$')
-#plt.savefig('build/plot_hyst.pdf')
+# plt.figure(1)
+# plt.plot(I1,B1,'xr',label=r'Messwerte')
+# plt.plot(I2,B2,'xr',)
+#
+# #plt.plot(T1[55:],(I1[55:]),'bx',label=r'Untergrund')
+# plt.plot(I_lin,hysterese(I_lin,*params_hyst),'c-',label=r'Fit-Funktion')
+# #plt.plot(I_lin,hysterese(I_lin,1000,0,10),'g-')
+# #plt.plot(x,gerade(x,m_untergrund1,b_untergrund1),'k-',label=r'Untergrund fit linregress')
+# # plt.plot(T1[:j],I1[:j],'mx',label=r'Messpunkte ohne Untergrund')
+# # plt.plot(T1[j:],I1[j:]-gerade(T1[j:],*params_untergund1),'mx',)
+# # plt.plot(T1,I1,'kx',label=r'Messpunkte mit Untergrund')
+# plt.legend(loc='best')
+# plt.xlabel(r'Strom $I/ \si{\ampere} $')
+# plt.ylabel(r'Magnetfeld $B/ \si{\milli\tesla}$')
+# plt.savefig('build/plot_hyst.pdf')
 
 def ds_bestimmen(ds1,ds2):
     ds=unp.uarray(ds1,ds2)
     for index, value in enumerate(ds1):
         ds[index]=unp.uarray(np.mean([ds1[index],ds2[index]]),np.std([ds1[index],ds2[index]]))
     return ds
+
 rot_Ds=np.array([1510-1280,1702-1510,1880-1702,2061-1880])  # D entspricht Delta
-print(rot_Ds)
+print('Ds_rot',rot_Ds)
 rot_ds1=np.array([1360-1220,1555-1440,1751-1642,1930-1834])  # d entspricht delta
 print(rot_ds1)
 rot_ds2=np.array([1555-1440,1751-1642,1930-1834,2107-2012])
@@ -155,11 +156,11 @@ print(rot_ds2)
 
 rot_ds=ds_bestimmen(rot_ds1,rot_ds2)
 #rot_ds=unp.uarray(np.mean([rot_ds1,rot_ds2]),np.std([rot_ds1,rot_ds2]))
-print('test',rot_ds)
+print('ds_rot',rot_ds)
 
 
 blau_sig_Ds=np.array([2725-2515,2919-2729,3102-2919,3278-3102])
-print(blau_sig_Ds)
+print('DSblau_sig',blau_sig_Ds)
 blau_sig_ds1=np.array([2580-2480,2780-2685,2970-2882,3156-3070])
 print(blau_sig_ds1)
 blau_sig_ds2=np.array([2780-2685,2970-2882,3156-3070,3328-3248])
@@ -167,16 +168,18 @@ print(blau_sig_ds2)
 
 blau_sig_ds=ds_bestimmen(blau_sig_ds1,blau_sig_ds2)
 #blau_sig_ds=unp.uarray(np.mean([blau_sig_ds1,blau_sig_ds2]),np.std([blau_sig_ds1,blau_sig_ds2]))
-print('blau_siga',blau_sig_ds)
+print('ds_blau_siga',blau_sig_ds)
 
 blau_pi_Ds=np.array([2740-2545,2945-2740,3121-2945,3293-3121])
-print(blau_pi_Ds)
+print('Ds_blau_pi',blau_pi_Ds)
 blau_pi_ds1=np.array([2593-2496,2790-2710,2985-2905,3162-3088])
 print(blau_pi_ds1)
 blau_pi_ds2=np.array([2790-2710,2985-2905,3162-3088,3336-3260])
 print(blau_pi_ds2)
-blau_pi_ds=unp.uarray(np.mean([blau_pi_ds1,blau_pi_ds2]),np.std([blau_pi_ds1,blau_pi_ds2]))
-print(blau_pi_ds)
+
+blau_pi_ds=ds_bestimmen(blau_pi_ds1,blau_pi_ds2)
+#blau_pi_ds=unp.uarray(np.mean([blau_pi_ds1,blau_pi_ds2]),np.std([blau_pi_ds1,blau_pi_ds2]))
+print('ds_blau_pi',blau_pi_ds)
 
 
 def d_lam(Ds,ds,DlamD):
@@ -212,6 +215,8 @@ d_E_lam_rot=d_E_lam(lam_rot,d_lam_rot)
 print('d_E_lam_rot',d_E_lam_rot/const.e)
 print('g_rot',g_mess(d_E_lam_rot,B_rot))
 
+
+
 g_ij_rot=g_mess(d_E_lam_rot,B_rot)
 
 print('blau B_sig',B_blau_sig)
@@ -223,6 +228,7 @@ print('g_blau_sig',g_mess(d_E_lam_blau_sig,B_blau_sig))
 
 g_ij_blau_sig=g_mess(d_E_lam_blau_sig,B_blau_sig)
 
+
 print('blau_B_pi',B_blau_pi)
 d_lam_pi_blau=d_lam(blau_pi_Ds,blau_pi_ds,DlamD_blau)
 print('d_lam_pi_blau',d_lam_pi_blau)
@@ -232,10 +238,22 @@ print('g_blau_pi',g_mess(d_E_lam_blau_pi,B_blau_pi))
 
 g_ij_blau_pi=g_mess(d_E_lam_blau_pi,B_blau_pi)
 
+g_ij_rot_mittelwert=np.mean(g_ij_rot)
+
+g_ij_blau_sig_mittelwert=np.mean(g_ij_blau_sig)
+g_ij_blau_pi_mittelwert=np.mean(g_ij_blau_pi)
+
+print('rot',g_ij_rot_mittelwert)
+print('blau sig',g_ij_blau_sig_mittelwert)
+print('blau pi',g_ij_blau_pi_mittelwert)
+
 def abweich(mess,theo):
+    g_ij_blau_sig_mittelwert=np.mean(g_ij_blau_sig)
     return(mess-theo)/theo
 
+
+
 #Abweichungen
-print('abweich rot sigma',abweich(np.abs(g_ij_rot),1),'theorie',1)
-print('abweich blau sigma',abweich(np.abs(g_ij_blau_sig),(2+1.5)/2),'theorie',(2+1.5)/2)
-print('abweich blau pi',abweich(np.abs(g_ij_blau_pi),0.5),'theorie',0.5)
+print('abweich rot sigma',abweich(np.abs(g_ij_rot_mittelwert),1),'theorie',1)
+print('abweich blau sigma',abweich(np.abs(g_ij_blau_sig_mittelwert),(2+1.5)/2),'theorie',(2+1.5)/2)
+print('abweich blau pi',abweich(np.abs(g_ij_blau_pi_mittelwert),0.5),'theorie',0.5)

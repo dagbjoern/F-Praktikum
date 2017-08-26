@@ -11,7 +11,7 @@ endif
 all: build/main.pdf
 
 # hier Python-Skripte:
-build/plot1.pdf: auswertung.py messung1.txt messung2.txt matplotlibrc header-matplotlib.tex | build
+build/plot1.pdf: auswertung.py  matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python auswertung.py
 
 build/plot2.pdf: build/plot1.pdf | build

@@ -1,2 +1,0 @@
-# Position  , Intensität
-0             0

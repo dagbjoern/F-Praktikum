@@ -1,24 +1,174 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-Um aus den Messwerte die ...?? zu berechnen, werden die
+Um aus den Messwerten das Bohr'sche Magneton zu berechnen,
+werden für verschiedene B-Feldgradienten die
 Messwerte der Intensität in Abhänigkeit der Position aufgetragen.
-Die Tabelle \ref{tab:strom} enthält die verwendeten strome für den
-Ablenkmagneten und die daraus relutierendne E-Feldstärke aus
-Gleichung \ref{eqn:magnet}.
+Die Tabelle \ref{tab:strom} enthält die verwendeten Ströme für den
+Ablenkmagneten und die entsprechende B-Feldstärke. Aus der
+Gleichung
+\begin{align}
+  \frac{\partial B}{\partial z}=0,968\frac{B}{a} \label{eqn:grad}
+\end{align}
+lässt sich der entsprechende B-Feldgradient berechnen.
 \begin{table}
 \centering
-\caption{}
+\caption{Einstellung der Ströme und B-Felder und B-Feldgradienten aus Gleichung \eqref{eqn:grad} für die verschiedenen Messungen.}
 \label{tab:strom}
-\begin{tabular}{c c}
+\begin{tabular}{c c c}
 \toprule
- $I/\si{\milli\ampere}$ & $B/\si{tesla}$ \\
+ $I/\si{\milli\ampere}$ & $B/\si{tesla}$ & $\frac{\partial B}{\partial z}/\si{\tesla\per\meter}$\\
 \midrule
-0,4  &   \\
-0,5  &   \\
-0,6  &   \\
-0,735&   \\
-0,8  &   \\
-0,9  &   \\ 
+0     &  0     &  0        \\
+0,4   & 0,3    & 116,16    \\
+0,5   & 0,38   & 147,13    \\
+0,6   & 0,45   & 174,24    \\
+0,735 & 0,55   & 212,96    \\
+0,8   & 0,595  & 230,38    \\
+0,9   & 0,765  & 296,208   \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+In den Abbildungen \ref{fig:mess0}-\ref{fig:mess6}
+sind für die verschiedenen B-Feldgradienten
+die Intensität in $\si{\micro\volt}$ in Abhängigkeit von der Position in
+Spindelumdrehungen $Skt$ aufgetragen.
+
+\begin{figure}
+  \centering
+  \includegraphics{build/plot_B=0.pdf}
+  \caption{Messung für $\frac{\partial B}{\partial z}=0$ }
+  \label{fig:mess0}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \begin{subfigure}{0.48\textwidth}
+      \includegraphics[width=1\textwidth]{build/plot1.pdf}
+      \caption{Messung für $\frac{\partial B}{\partial z}=116,16\si{\tesla\per\meter}$. }
+      \label{fig:mess1}
+     \end{subfigure}
+     \begin{subfigure}{0.48\textwidth}
+       \includegraphics[width=1\textwidth]{build/plot2.pdf}
+       \caption{Messung für $\frac{\partial B}{\partial z}=  147,13\si{\tesla\per\meter}$. }
+       \label{fig:mess2}
+     \end{subfigure}
+     \begin{subfigure}{0.48\textwidth}
+       \includegraphics[width=1\textwidth]{build/plot3.pdf}
+       \caption{Messung für $\frac{\partial B}{\partial z}=174,24\si{\tesla\per\meter}$. }
+       \label{fig:mess3}
+     \end{subfigure}
+     \begin{subfigure}{0.48\textwidth}
+       \includegraphics[width=1\textwidth]{build/plot4.pdf}
+       \caption{Messung für $\frac{\partial B}{\partial z}=212,96\si{\tesla\per\meter}$. }
+       \label{fig:mess4}
+     \end{subfigure}
+     \begin{subfigure}{0.48\textwidth}
+       \includegraphics[width=1\textwidth]{build/plot5.pdf}
+       \caption{Messung für $\frac{\partial B}{\partial z}=230,38\si{\tesla\per\meter}$. }
+       \label{fig:mess5}
+     \end{subfigure}
+     \begin{subfigure}[width=1\textwidth]{0.48\textwidth}
+       \includegraphics[width=1\textwidth]{build/plot6.pdf}
+       \caption{Messung für $\frac{\partial B}{\partial z}=296,208\si{\tesla\per\meter}$. }
+       \label{fig:mess6}
+     \end{subfigure}
+     \caption{Messwerte der Intensitätsverteilung für die unterschiedlichen B-Feldgradienten aus der Tabelle \ref{tab:strom}.}
+    \label{fig:mess_all}
+\end{figure}
+
+An die Messwerte, um die Intensitätsmaxima aus den Abbildungen
+\ref{fig:0}-\ref{fig:mess_all}, wird jeweils eine
+Gaußfunktion der Form
+\begin{align}
+  f(x)=a\symup{e}^{-\frac{(x-b)^2}{2*c^2}}+d
+\end{align}
+gefittet. Der Parameter $b$ ist dabei die
+Position des Intensitätsmaximums und dient hier zur Bestimmung
+des Abstandes $s$ zu Nullposition aus
+der Abbildung \ref{fig:0} mit
+\begin{align}
+b= 6,724\pm0,004 Skt
+\end{align}
+.Dabei wird zwischen
+$b_l$ die Position des linken Intensitätsmaximums und
+$b_r$ die Position des rechten Intensitätsmaximums
+unterschieden. Die
+Tabelle \ref{tab:parameter}
+enthält jeweils den bestimmten Parameter
+$b$ für die Unterschiedlichen B-Feldgradienten.
+
+\begin{table}
+    \centering
+    \caption{Position der Intensitätsmaxima
+    aus der Abbildung \ref{fig:mess_all} für die
+     Unterschiedlichen B-Feldgradienten.}
+    \label{tab:parameter}
+    \begin{tabular}{c c c}
+      \toprule
+      $\frac{\partial B}{\partial z}/\si{\tesla\per\meter}$ & $b_l/Skt$ & $b_r/Skt$ \\
+      \midrule
+      147,13  & 6,189\pm0,004 & 7,337\pm0,002  \\
+      116,16  & 6,095\pm0,007 & 7,410\pm0,003  \\
+      174,24  & 6,005\pm0,003 & 7,493\pm0,003  \\
+      212,96  & 5,879\pm0,004 & 7,587\pm0,009  \\
+      230,38  & 5,839\pm0,003 & 7,596\pm0,006  \\
+      296,208 & 5,757\pm0,004 & 7,735\pm0,006  \\
+      \bottomrule
+    \end{tabular}
+\end{table}
+
+Die Tabelle \ref{tab:abstand} enthält
+die Abstände $s$ von den Intensitätsmaxima zur Nullposition.
+Ebenfalls wird der Abstand zwischen den beiden Intensitätsmaxima bestimmt
+und halbiert, um ebenfalls den Abstand $s$ zu bestimmen.
+Die bestimmten Abstände $s$ werden gemittelt und in
+$\si{\meter}$ umgerechnet
+ eine Spindelumdrehungen $Skt$
+ entspricht dabei \SI{1.8}{\milli\meter}.
+\begin{table}
+    \centering
+    \caption{Abstände $s$ der Intensitätsmaxima zur Nullposition aus der Abbildung \ref{fig:mess_all} für die unterschiedlichen B-Feldgradienten.}
+    \label{tab:abstand}
+    \begin{tabular}{c c c c c c }
+      \toprule
+      $\frac{\partial B}{\partial z}/\si{\tesla\per\meter}$ & $s_l/Skt$ & $s_r/Skt$ & $\frac{b_r-b_l}{2}/Skt$ & $\bar{s}/Skt$ &$\bar{s}/\si{\milli\meter}$\\
+      \midrule
+      147,13  & 0,535\pm0,005  & 0,613\pm0,004  & 0,574\pm0,002  & 0,57\pm0,03  & 1,03\pm0,06 \\
+      116,16  & 0,629\pm0,008  & 0,686\pm0,004  & 0,657\pm0,004  & 0,66\pm0,02  & 1,18\pm0,04 \\
+      174,24  & 0,719\pm0,005  & 0,769\pm0,004  & 0,744\pm0,002  & 0,74\pm0,02  & 1,34\pm0,04 \\
+      212,96  & 0,845\pm0,005  & 0,863\pm0,009  & 0,854\pm0,005  & 0,85\pm0,01  & 1,54\pm0,01 \\
+      230,38  & 0,885\pm0,005  & 0,872\pm0,007  & 0,878\pm0,003  & 0,88\pm0,01  & 1,58\pm0,01 \\
+      296,208 & 0,967\pm0,005  & 1,011\pm0,007  & 0,989\pm0,004  & 0,99\pm0,02  & 1,78\pm0,03 \\
+      \bottomrule
+    \end{tabular}
+\end{table}
+
+Die bestimmten gemittelten Abstände $\bar{s}$ zu Nullposition
+aus der Tabelle \ref{tab:abstand}
+werden in Abhängigkeit zu dem B-Feldgradienten in Abbildung
+\ref{fig:lin} aufgetragen und ein lineare Ausgleichsrechnung mit der Funktion
+\begin{align}
+s=\mu_{\mathrm{B}}\frac{l\cdot L\left(1-\frac{L}{2l}\right)}{6 k T}\frac{\partial B}{\partial z}
+\end{align}
+durchgeführt.
+\begin{figure}
+  \centering
+  \includegraphics{build/lin_plot.pdf}
+  \caption{Messung für $\frac{\partial B}{\partial z}=0$ }
+  \label{fig:mess0}
+\end{figure}
+
+Dabei ist $\mu_{\mathrm{B}}$ das Bohr'sche Magneton der zu bestimmende Parameter, $T$ die Ofentemperatur,
+$L$ die Länge der Polschuhe und $l$ der Abstand von der Eintrittsblende $B_4$ (Abb.\ref{fig:aufbau}),
+sie betragen
+\begin{align}
+  T&=\SI{463,15}{\kelvin}\\
+  L&=\SI{0,070}{\meter}\\
+  l&=\SI{0,455}{\meter}.
+\end{align}
+Aus der Ausgleichsrechnung folgt für das aus der Messung bestimmte
+Bohr'sche Magneton
+\begin{align}
+\mu_{\mathrm{B}}=\SI{9,1(5) e-24}{\joule\per\tesla }.
+\end{align}
