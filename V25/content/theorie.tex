@@ -2,7 +2,7 @@
 \label{sec:Theorie}
 Im ursprünglichen Stern-Gerlach Versuch ist die Aufspaltung eines Silber-Atomstrahls beim
 Durchlauf eines inhomogenen Magnetfeldes zu beobachten.
-An den Spin vom äußeren Elektron des Silber-Atoms koppelt ein magnetischesn
+An den Spin vom äußeren Elektron des Silber-Atoms koppelt ein magnetisches
 Moment $\mu$, welches für die Ablenkung verantwortlich ist.
 Das Magnetische Moment setzt sich aus dem Eigendrehimpuls $S$,
 dem Bahndrehimpuls $L$ und dem Kernspin $I$ zusammen zu: $\mu=\mu_\mathrm{S}+\mu_\mathrm{L}+\mu_\mathrm{I}$.
@@ -14,13 +14,13 @@ Es bleibt ein magnetisches Moment von:
 \begin{align}
   \vec{\mu}_\mathrm{S}=-\frac{e}{2m}g_\mathrm{S}\vec{S}
 \end{align}
-übrig. Das gyromagnetiche Verhältnis wird mit $g_\mathrm{S}\approx 2$ bezeichnet.
+übrig. Das gyromagnetische Verhältnis wird mit $g_\mathrm{S}\approx 2$ bezeichnet.
 Besteht ein Magnetfeld in z-Richtung, so sind zwei Spineinstellungen möglich und
 es gilt für die z-Komponente des magnetischen Momentes:
 \begin{align}
   \mu_\mathrm{s_\mathrm{z}}=-g_\mathrm{s}m_\mathrm{s}\mu_\mathrm{B}
 \end{align}
-mit $\mu_\mathrm{B}=\frac{e}{2m}\hbar$ dem Bohr'schen Magneton.
+mit $\mu_\mathrm{B}=\frac{e}{2m}\hbar$ dem bohrschen Magneton.
 Bei der Wechselwirkung der Atomen mit einem inhomogenen Magnetfeld
 in z-Richtung wirkt auf diese eine Kraft:
 \begin{align}
@@ -37,7 +37,7 @@ maxwellschen Geschwindigkeitsverteilung:
 \begin{align}
   \rho(v)dv=\frac{4}{\sqrt{\pi}\alpha^3}v^2 \exp{\frac{-v^2}{\alpha^3}}dv
 \end{align}
-mit $\alpha=\sqrt{\frac{2kT}{m}}$.
+mit $\alpha=\sqrt{\frac{2kT}{m}}$.\\
 Für den messbaren Teilchenstrom $I(v)=\rho(v)v$ gilt damit:
 \begin{align}
  I(v)=\frac{4}{\sqrt{\pi}\alpha^3}v^3 \exp{\frac{-v^2}{\alpha^3}}\label{eqn:teilchenstrom},
@@ -50,6 +50,13 @@ Beobachtbar ist diese Ablenkung bei einem Feldgradienten
 in Größenordnung des Strahlendurchmessers.
 Der in diesem Versuch genutzte Elektromagnet besitzt ein zylinderförmiges
 Polschuhprofil, gezeigt in Abbildung \ref{fig:magnet}.
+\begin{figure}
+   \centering
+    \includegraphics[width=0.5\textwidth]{magnet.PNG}
+    \caption{Querschnitt des genutzten Magneten. Rot markiert ist der Bereich mit konstantem Feldgradienten.\cite{skript}}
+    \label{fig:magnet}
+    \FloatBarrier
+\end{figure}
 Dessen Magnetfeld entspricht dem zweier stromdurchflossener Drähte im Abstand $2a$
 mit entgegengesetzter Stromrichtung.
 Ist der Atomstrahl circa $1,3a$ von den gedachten Drähten entfernt, so ist
@@ -72,7 +79,14 @@ Maximum messen. Mit eingeschaltetem Magnetfeld formen sich zwei Intensitätsmaxi
 rechts und links der Nullposition aus.
 Für den Abstand zwischen Nullposition und jeweiligem Maximum gilt:
 \begin{align}
-  s=\mu_\mathrm{sz}\frac{l\cdot L(1-\frac{L}{2l})}{6kT}\frac{\partial B}{\partial z} \label{eqn:abstand}
+ s=\mu_\mathrm{sz}\frac{l\cdot L\left(1-\frac{L}{2l}\right)}{6kT}\cdot\frac{\partial B}{\partial z} \label{eqn:abstand}
 \end{align}
 mit $L$ der Länge der Polschuhe und $l$ dem Abstand zwischen
-der Eintrittsblende $B_\mathrm{4}$ und Wolframdraht.
+der Eintrittsblende $B_\mathrm{4}$, zu sehen in Abbildung \ref{fig:schema} und Wolframdraht.
+\begin{figure}
+   \centering
+    \includegraphics[width=0.5\textwidth]{schema.PNG}
+    \caption{Die Position der Eintrittsblende.\cite{skript}}
+    \label{fig:schema}
+    \FloatBarrier
+\end{figure}
