@@ -1,5 +1,9 @@
 \section{Theorie}
 \label{sec:Theorie}
+Der folgende Versuch befasst sich mit dem Zeemann-Effekt. Der Zeemann-Effekt beschreibt die Aufspaltung
+von Spektrallinien durch ein Magnetfeld. Diese Aufspaltung wird verursacht durch die Verschiebung
+der Energieniveaus einzelner Zustände durch ein externes Magnetfeld.
+
 \subsection{Magnetische Momente und Drehimpulse}
 Ein Hüllenelektron besitzt zwei Drehimpulse, den Spin $\vec{s}$ und den Bahndrehimpuls $\vec{l}$.
 Deren Beträge sind wie folgt definiert durch die Quantenzahlen $\textit{l}$ und $s$:
@@ -14,12 +18,13 @@ Den beiden Drehimpulsen kann ein magnetischen Moment zugeordnet werden:
 \end{align}
 Es besteht eine Proportionalität zum Bohrschen-Magneton $\mu_\mathrm{B}:=\frac{1}{2}e_\mathrm{0}\frac{\hbar}{m_\mathrm{0}}$
 (mit $e_\mathrm{0}$ der Elektronenladung und $m_\mathrm{0}$ der Elektronenmasse).
-Die magnetische Anomalie des Elektons sorgt für den zusätzlichen Faktor $g_\mathrm{s}=2$
+Die magnetische Anomalie des Elektons sorgt für den zusätzlichen Landé-Faktor $g_\mathrm{s}=2$
 im magnetischen Moment des Spins.
 
 \subsection{Wechselwirkung der Drehimpulse}
 Die Wechselwirkung von Bahndrehimpulsen und Spins kann auf komplizierte Weise ablaufen.
-In der Natur treten zwei Grenzfälle auf, die im Folgenden thematisiert werden:\\
+Zwei Grenzfälle, die die meisten Atome hinreichend genau beschreiben, werden
+die im Folgenden thematisiert:\\
 \\
 \textbf{1.Fall:} Bei leichten Atomen setzen sich die einzelnen Bahndrehimpulse und Spins
 zu einem Gesamtbahndrehimpuls der Elektronenhülle $\vec{L}=\sum_i l_i$
@@ -80,8 +85,9 @@ damit eine Aufspltung eines Nivaus in $2J+1$ Unterniveaus.
 Zwischen den Zuständen sind Übergänge unter der Emission eines Photons möglich.
 Die Energie des Photos, damit auch die Wellenlänge der messbaren Spektrallinie,
 entspricht dabei der Energiedifferenz der beiden Zustände.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Rechnung
-Aus Rechnungen folgen Auswahlregeln für die Übergänge.
+In der Quantenmechanik werden für die möglichen Übergänge Wahrscheinlichkeiten bestimmt,
+dazu wird das Matrixelement mit Dipolausdrücken berechnet.
+Aus den Rechnungen folgen Auswahlregeln für die Übergänge.
 Übergänge zwischen den Zuständen sind danach nur möglich wenn die
 Orientierungsquantenzahl $m$ sich um $\pm 1$ oder gar nicht ändert:
 \begin{align}
@@ -109,7 +115,7 @@ Die Übergänge lassen sich anhand ihrer Polarisation kategorisieren:
     \caption{Aufspaltung und mögliche Übergänge beim Zeemann-Effekt.\cite{skript}}
     \label{fig:normal}
 \end{figure}
-Beim normalen Zeemann-Effekt findet grundsätzlich eine Aufspalung in ein Tripplet auf, weil die Energiedifferenzen
+Beim normalen Zeemann-Effekt tritt grundsätzlich eine Aufspalung in ein Tripplet auf, weil die Energiedifferenzen
 innerhalb einer Gruppe mit konstantem $\Delta m$ gleich sind.
 Aufgrund der Polarisation sind die Lienien nicht aus jeder Richtung beobachtbar.
 Die $\pi$-Linie liegt mit maximaler Intensität senkrecht zur Feldrichtung vor und ist in Feldrichtiung nicht beobachtbar.
@@ -126,7 +132,7 @@ Bei dem anomalen Zeemann-Effekt gilt $S \neq 0$ und damit hängen die Energiedif
 In diesem Fall ist $g_\mathrm{j}$ nicht automatisch $1$, sondern nimmt verschiedene Werte an.
 Die Energieverschiebung ist dann gegeben durch:
 \begin{align}
-  \Delta E= [m_\mathrm{1}g_\mathrm{J}(L_\mathrm{1},S_\mathrm{1},J_\mathrm{1})]-m_\mathrm{2}g_\mathrm{J}(L_\mathrm{2},S_\mathrm{2},J_\mathrm{2}). \label{eqn:g_ji}
+  \Delta E= [m_\mathrm{1}g_\mathrm{J}(L_\mathrm{1},S_\mathrm{1},J_\mathrm{1})]-m_\mathrm{2}g_\mathrm{J}(L_\mathrm{2},S_\mathrm{2},J_\mathrm{2})]\cdot B \cdot \mu_\mathrm{B}=g_\mathrm{ij}\cdot B \cdot \mu_\mathrm{B} \label{eqn:g_ji}.
 \end{align}
 Die Indizes geben die Zordnung zu den Niveaus an.
 Die Aufspaltung ist wesentlich Linienreicher und ist in Abbildung \ref{fig:anomal} dargestellt.
@@ -138,7 +144,7 @@ Die Aufspaltung ist wesentlich Linienreicher und ist in Abbildung \ref{fig:anoma
 \end{figure}
 \subsection{Lummer-Gehrcke-Platte}
 In diesem Versuch wird zur Sichtbarmachung der Aufspaltung eine Lummer-Gehrke-Platte genutzt.
-An dieser Stelle folgt ein kurze Beschreibung der Funktionsweise der Platte.
+An dieser Stelle folgt eine kurze Beschreibung der Funktionsweise der Platte.
 Eingestrahltes Licht wird innerhalb der Platte mehrfach reflektiert, dabei tritt bei
 jeder Reflektion ein Teil des Lichts an der oberen und unteren Grenzfläche aus.
 Dies ist in Abbildung $\ref{fig:platte}$ dargestellt.
@@ -148,8 +154,16 @@ Dies ist in Abbildung $\ref{fig:platte}$ dargestellt.
     \caption{Der Strahlengang innerhalb der Lummer-Gehrcke-Platte.\cite{skript}}
     \label{fig:platte}
 \end{figure}
-Die Strahlen interferieren konstruktiv wenn die Bedingung $2d\cos{\theta}=n\lambda$
-erfüllt ist. Hierbei ist $d$ die Dicke der Platte und $\lambda$ die Wellenlänge der Strahlung.
+Die Strahlen interferieren konstruktiv wenn die Differenz zwichen der "roten" und "grünen"
+Weglänge gleich dem Vielfachen der Wellenlänge $\lambda$ ist. Dieser Sachverhalt ist in
+Abbildung \ref{fig:meisterwerk} zu sehen.
+\begin{figure}
+   \centering
+    \includegraphics[width=0.9\textwidth]{meisterwerk.PNG}
+    \caption{Skizze des Gangunterschiedes in der Lummer-Gehrcke-Platte.\cite{skript}}
+    \label{fig:platte}
+\end{figure}
+\FloatBarrier
 Bei eingeschaltetem Magnetfeld verändert sich die Wellenlänge um $\delta\lambda$ und
 die Interferenzstreifen verschieben sich um $\delta s$.
 Von Bedeutung sind die beiden Größen Dispersionsgebiet und Auflösungsvermögen.
