@@ -1,26 +1,32 @@
+
+Das Ziel dieses Versuchs ist die Untersuchung der Richtungsquantelung von Elektronen nach Durchlauf eines
+inhomogenen Magnetfeldes anhand von $^{39}K$.
 \section{Theorie}
 \label{sec:Theorie}
 Im ursprünglichen Stern-Gerlach Versuch ist die Aufspaltung eines Silber-Atomstrahls beim
 Durchlauf eines inhomogenen Magnetfeldes zu beobachten.
-An den Spin vom äußeren Elektron des Silber-Atoms koppelt ein magnetisches
-Moment $\mu$, welches für die Ablenkung verantwortlich ist.
+An den Spin $m_\mathrm{s}=\pm\frac{1}{2}$ des äußeren Elektrons des Silber-Atoms koppelt ein magnetisches
+Moment $\mu_\mathrm{s}$. Auf das magnetische Moment wirkt eine Kraft und die Ablenkung
+findet statt. Je nach Spinrichtung
+wird der Strahl in entgegengesetzte Richtung abgelenkt. Damit teilt sich der Strahlt in zwei Teile auf.
 Das Magnetische Moment setzt sich aus dem Eigendrehimpuls $S$,
-dem Bahndrehimpuls $L$ und dem Kernspin $I$ zusammen zu: $\mu=\mu_\mathrm{S}+\mu_\mathrm{L}+\mu_\mathrm{I}$.
+dem Bahndrehimpuls $L$ und dem Kernspin $I$ zusammen zu $\mu=\mu_\mathrm{S}+\mu_\mathrm{L}+\mu_\mathrm{I}$.
 Hierbei ist $\mu_\mathrm{I}$ vernachlässigbar klein gegenüber den anderen
 magnetischen Momenten.
 Bei Atomen mit einem Valenzelektron in der s-Schale ist der Bahndrehimpuls
-$L$ gleich null und somit auch $\mu_\mathrm{L}$.
+$L$ im Grundzustand gleich null und somit auch $\mu_\mathrm{L}$.
 Es bleibt ein magnetisches Moment von:
 \begin{align}
   \vec{\mu}_\mathrm{S}=-\frac{e}{2m}g_\mathrm{S}\vec{S}
 \end{align}
-übrig. Das gyromagnetische Verhältnis wird mit $g_\mathrm{S}\approx 2$ bezeichnet.
+übrig. Hier beschreibt $e$ die Elementarladung und $m$ die Masse des Elektrons.
+Das gyromagnetische Verhältnis wird mit $g_\mathrm{S}\approx 2$ bezeichnet.
 Besteht ein Magnetfeld in z-Richtung, so sind zwei Spineinstellungen möglich und
 es gilt für die z-Komponente des magnetischen Momentes:
 \begin{align}
   \mu_\mathrm{s_\mathrm{z}}=-g_\mathrm{s}m_\mathrm{s}\mu_\mathrm{B}
 \end{align}
-mit $\mu_\mathrm{B}=\frac{e}{2m}\hbar$ dem bohrschen Magneton.
+mit $\mu_\mathrm{B}=\frac{e}{2m}\hbar$ dem bohrschen Magneton und $m_\mathrm{s}$ der Orientierungsquantenzahl.
 Bei der Wechselwirkung der Atomen mit einem inhomogenen Magnetfeld
 in z-Richtung wirkt auf diese eine Kraft:
 \begin{align}
@@ -66,23 +72,24 @@ Für den Feldgradienten gilt dann:
   \frac{\partial B}{\partial z}=0,968\frac{B}{a}
 \end{align}
 mit $B=\mu_\mathrm{0}\mu_\mathrm{r}\frac{I}{\pi}\frac{a}{r^2}$ dem magnetischen
-Feld an der Stelle r des Zweidratkonstrukts.
-In einem Langmuir-Taylor Detektor werden die Teilchen detektiert.
-Der LT-Detektor setzt sich zusammen aus einem beheizten Wolfram Draht, umgeben
+Feld an der Stelle r des Zweidratkonstrukts. Die Größe $a$ ist in Abbildung \ref{fig:magnet} zu sehen.
+Ein Langmuir-Taylor Detektor misst entlang der z-Achse eine Intensitätsverteilung $I(z)$.
+Der LT-Detektor setzt sich zusammen aus einem beheizten Wolframdraht, umgeben
 von einem Nickelzylinder. Zwischen den Elementen liegt eine Abzugsspannung an.
 Das Kalium wird an der Oberfläche des Wolframs
 ionisiert und als Ionen emittiert. Die Ionisierungsenergie der Kaliumatome
 muss hier geringer sein als die Austrittsarbeit des Wolframs.
-Über die Flugbahn des Atomstrahls lässt sich die Intensitätsverteilung
-bestimmen. Ohne ein Magnetfeld lässt sich die Nullposition mit nur einem
-Maximum messen. Mit eingeschaltetem Magnetfeld formen sich zwei Intensitätsmaxima
+Damit ist die Teilchenintensität in Form einer Spannung messbar.\\
+%Über die Flugbahn des Atomstrahls lässt sich die Intensitätsverteilung bestimmen.
+Ohne ein Magnetfeld lässt sich nur ein
+Maximum, die Nullposition, messen. Mit eingeschaltetem Magnetfeld formen sich zwei Intensitätsmaxima
 rechts und links der Nullposition aus.
 Für den Abstand zwischen Nullposition und jeweiligem Maximum gilt:
 \begin{align}
  s=\mu_\mathrm{sz}\frac{l\cdot L\left(1-\frac{L}{2l}\right)}{6kT}\cdot\frac{\partial B}{\partial z} \label{eqn:abstand}
 \end{align}
 mit $L$ der Länge der Polschuhe und $l$ dem Abstand zwischen
-der Eintrittsblende $B_\mathrm{4}$, zu sehen in Abbildung \ref{fig:schema} und Wolframdraht.
+der Eintrittsblende $B_\mathrm{4}$ (zu sehen in Abbildung \ref{fig:schema}) und Wolframdraht.
 \begin{figure}
    \centering
     \includegraphics[width=0.5\textwidth]{schema.PNG}
