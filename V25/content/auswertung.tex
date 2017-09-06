@@ -1,22 +1,28 @@
+\newpage
 \section{Auswertung}
 \label{sec:Auswertung}
+Es wird die Spannung am LT-Detekor für unterschiedliche Position des LT-Detektors, welche in Spindelumdrehungen $Skt$ angegeben wird, gemessen.
+Dabei ist die Spannung an einer Position proportional zu der Intensität des Strahles an ebendieser.
+Zusätzlich wird der Strom in dem Ablenkmagneten varriert, sodass sich der
+magnetische Feldgradienten $\frac{\partial B}{\partial z}$
+verändert. Die Messwerte sind in den Kapitel \ref{sec:mess} aufgelistet.
 Um aus den Messwerten das Bohr'sche Magneton zu berechnen,
-werden für verschiedene B-Feldgradienten die
-Messwerte der Intensität in Abhänigkeit der Position aufgetragen.
-Die Tabelle \ref{tab:strom} enthält die verwendeten Ströme für den
-Ablenkmagneten und die entsprechende B-Feldstärke. Aus der
-Gleichung
-\begin{align}
-  \frac{\partial B}{\partial z}=0,968\frac{B}{a} \label{eqn:grad}
-\end{align}
-lässt sich der entsprechende B-Feldgradient berechnen.
+werden für verschiedene Feldgradienten $\frac{\partial B}{\partial z}$ die
+Messwerte der Spannung am LT-Detekor in Abhängigkeit der Position aufgetragen.
+Tabelle \ref{tab:strom} enthält die verwendeten Ströme für den
+Ablenkmagneten und die entsprechenden magnetischen Feldstärken $B$. Aus der
+Gleichung \eqref{eqn:grad}
+% \begin{align}
+%   \frac{\partial B}{\partial z}=0,968\frac{B}{a} \label{eqn:grad}
+% \end{align}
+lässt sich der entsprechende Feldgradient $\frac{\partial B}{\partial z}$ berechnen.
 \begin{table}
 \centering
 \caption{Einstellung der Ströme und B-Felder und B-Feldgradienten aus Gleichung \eqref{eqn:grad} für die verschiedenen Messungen.}
 \label{tab:strom}
 \begin{tabular}{c c c}
 \toprule
- $I/\si{\milli\ampere}$ & $B/\si{tesla}$ & $\frac{\partial B}{\partial z}/\si{\tesla\per\meter}$\\
+ $I/\si{\milli\ampere}$ & $B/\si{\tesla}$ & $\frac{\partial B}{\partial z}/\si{\tesla\per\meter}$\\
 \midrule
 0     &  0     &  0        \\
 0,4   & 0,3    & 116,16    \\
@@ -29,10 +35,9 @@ lässt sich der entsprechende B-Feldgradient berechnen.
 \end{tabular}
 \end{table}
 
-In den Abbildungen \ref{fig:mess0}-\ref{fig:mess6}
+In den Abbildungen \ref{fig:mess0} und \ref{fig:mess_all}
 sind für die verschiedenen B-Feldgradienten
-die Intensität in $\si{\micro\volt}$ in Abhängigkeit von der Position in
-Spindelumdrehungen $Skt$ aufgetragen.
+die Spannungen in $\si{\milli\volt}$ in Abhängigkeit von der Position des LT-Detektors dargestellt.
 
 \begin{figure}
   \centering
@@ -78,30 +83,30 @@ Spindelumdrehungen $Skt$ aufgetragen.
 \end{figure}
 
 An die Messwerte, um die Intensitätsmaxima aus den Abbildungen
-\ref{fig:0}-\ref{fig:mess_all}, wird jeweils eine
+\ref{fig:mess0}-\ref{fig:mess_all}, wird jeweils eine
 Gaußfunktion der Form
 \begin{align}
-  f(x)=a\symup{e}^{-\frac{(x-b)^2}{2*c^2}}+d
+  f(x)=a\exp\left({-\frac{(x-b)^2}{2c^2}}\right)+d
 \end{align}
 gefittet. Der Parameter $b$ ist dabei die
 Position des Intensitätsmaximums und dient hier zur Bestimmung
-des Abstandes $s$ zu Nullposition aus
-der Abbildung \ref{fig:0} mit
+des Abstandes $s$ zu Nullposition die aus
+der Abbildung \ref{fig:mess0} zu
 \begin{align}
-b= 6,724\pm0,004 Skt
+b_0= (6,724\pm0,004 )Skt
 \end{align}
-.Dabei wird zwischen
+bestimmt wird.
+Für die Messungen mit $\frac{\partial B}{\partial z}<0$ Dabei wird zwischen
 $b_l$ die Position des linken Intensitätsmaximums und
 $b_r$ die Position des rechten Intensitätsmaximums
-unterschieden. Die
-Tabelle \ref{tab:parameter}
+unterschieden. Tabelle \ref{tab:parameter}
 enthält jeweils den bestimmten Parameter
-$b$ für die Unterschiedlichen B-Feldgradienten.
+$b$ für die unterschiedlichen B-Feldgradienten.
 
 \begin{table}
     \centering
     \caption{Position der Intensitätsmaxima
-    aus der Abbildung \ref{fig:mess_all} für die
+    aus Abbildung \ref{fig:mess_all} für die
      Unterschiedlichen B-Feldgradienten.}
     \label{tab:parameter}
     \begin{tabular}{c c c}
@@ -118,17 +123,16 @@ $b$ für die Unterschiedlichen B-Feldgradienten.
     \end{tabular}
 \end{table}
 
-Die Tabelle \ref{tab:abstand} enthält
+Tabelle \ref{tab:abstand} enthält
 die Abstände $s$ von den Intensitätsmaxima zur Nullposition.
 Ebenfalls wird der Abstand zwischen den beiden Intensitätsmaxima bestimmt
 und halbiert, um ebenfalls den Abstand $s$ zu bestimmen.
-Die bestimmten Abstände $s$ werden gemittelt und in
-$\si{\meter}$ umgerechnet
- eine Spindelumdrehungen $Skt$
- entspricht dabei \SI{1.8}{\milli\meter}.
+Die bestimmten Abstände $s$ werden gemittelt
+(eine Spindelumdrehungen $Skt$
+ entspricht dabei \SI{1.8}{\milli\meter}).
 \begin{table}
     \centering
-    \caption{Abstände $s$ der Intensitätsmaxima zur Nullposition aus der Abbildung \ref{fig:mess_all} für die unterschiedlichen B-Feldgradienten.}
+    \caption{Abstände $s$ der Intensitätsmaxima zur Nullposition aus Abbildung \ref{fig:mess_all} für die unterschiedlichen B-Feldgradienten.}
     \label{tab:abstand}
     \begin{tabular}{c c c c c c }
       \toprule
@@ -144,10 +148,10 @@ $\si{\meter}$ umgerechnet
     \end{tabular}
 \end{table}
 
-Die bestimmten gemittelten Abstände $\bar{s}$ zu Nullposition
+Die gemittelten Abstände $\bar{s}$ zu Nullposition
 aus der Tabelle \ref{tab:abstand}
-werden in Abhängigkeit zu dem B-Feldgradienten in Abbildung
-\ref{fig:lin} aufgetragen und ein lineare Ausgleichsrechnung mit der Funktion
+werden in Abhängigkeit zu dem Feldgradienten $\frac{\partial B}{\partial z}$ in Abbildung
+\ref{fig:lin} aufgetragen, um ein lineare Ausgleichsrechnung mit der Funktion
 \begin{align}
 s=\mu_{\mathrm{B}}\frac{l\cdot L\left(1-\frac{L}{2l}\right)}{6 k T}\frac{\partial B}{\partial z}
 \end{align}
@@ -155,12 +159,12 @@ durchgeführt.
 \begin{figure}
   \centering
   \includegraphics{build/lin_plot.pdf}
-  \caption{Messung für $\frac{\partial B}{\partial z}=0$ }
-  \label{fig:mess0}
+  \caption{Abstände $\bar{s}$ zwischen den Intensiätsmaxima in Abhängigkeit zu dem B-Feldgradienten $\frac{\partial B}{\partial z}$ und Lineare Fit-Funktion. }
+  \label{fig:lin}
 \end{figure}
 
 Dabei ist $\mu_{\mathrm{B}}$ das Bohr'sche Magneton der zu bestimmende Parameter, $T$ die Ofentemperatur,
-$L$ die Länge der Polschuhe und $l$ der Abstand von der Eintrittsblende $B_4$ (Abb.\ref{fig:aufbau}),
+$L$ die Länge der Polschuhe und $l$ der Abstand von der Eintrittsblende $B_4$ (Abb.\ref{fig:schema}),
 sie betragen
 \begin{align}
   T&=\SI{463,15}{\kelvin}\\
